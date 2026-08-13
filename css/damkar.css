@@ -23,7 +23,8 @@
 .hero-left-col {
     flex: 1.6;
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-left: -12rem;
 }
