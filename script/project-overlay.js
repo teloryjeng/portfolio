@@ -614,4 +614,27 @@ document.addEventListener('DOMContentLoaded', () => {
             playSfx("deck_ui_bumper_end_02.dat", true);
         }
     });
+
+    // Check device AR support and hide AR guidance text if unsupported
+    function checkARSupport() {
+        const modelViewers = document.querySelectorAll('model-viewer');
+        modelViewers.forEach(mv => {
+            if (typeof mv.canActivateAR === 'function') {
+                mv.canActivateAR().then(supported => {
+                    if (!supported) {
+                        const arHint = mv.parentElement ? mv.parentElement.querySelector('.ar-hint') : null;
+                        if (arHint) {
+                            arHint.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+    }
+
+    if (window.customElements && typeof window.customElements.whenDefined === 'function') {
+        window.customElements.whenDefined('model-viewer').then(checkARSupport);
+    } else {
+        window.addEventListener('load', checkARSupport);
+    }
 });

@@ -692,3 +692,11 @@
         visibility: hidden;
     }
 }
+
+/* Hero 3D Viewer Skeleton Loading Poster */
+.damkar-hero-section model-viewer .mv-loading-poster,
+.husk-hero-section model-viewer .mv-loading-poster {
+    background: linear-gradient(90deg, #121212 25%, #1a1a1a 50%, #121212 75%) !important;
+    background-size: 200% 100% !important;
+    animation: p5-skeleton-loading 1.5s infinite linear !important;
+}
