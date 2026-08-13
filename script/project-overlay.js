@@ -606,4 +606,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }, true);
+
+    // Play SFX when disabled download wrapper is clicked
+    document.addEventListener('click', (e) => {
+        const wrapper = e.target.closest('.download-action-wrapper');
+        if (wrapper) {
+            playSfx("deck_ui_bumper_end_02.dat", true);
+        }
+    });
 });

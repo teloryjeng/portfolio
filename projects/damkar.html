@@ -41,17 +41,17 @@
 
     <main>
         <!-- Project Hero Section -->
-        <section class="project-detail-hero">
-            <div class="hero-bg-container">
-                <img src="../assets/img/damkar/untitled.png" alt="Truk Pemadam Kebakaran Hero" class="hero-bg-img">
-            </div>
-            <div class="hero-content-overlay">
-                <div class="section-container">
-                    <div class="hero-titles">
-                        <span class="hero-tagline">3D MODEL PROJECT</span>
-                        <h1 class="hero-main-title">TRUK DAMKAR</h1>
-
-                    </div>
+        <section class="damkar-hero-section">
+            <div class="section-container hero-flex-container">
+                <div class="hero-left-col">
+                    <model-viewer src="../assets/3d/damkar/hino500damkar.glb" alt="3D Model Truk Pemadam Kebakaran"
+                        auto-rotate camera-controls shadow-intensity="1" ar disable-pan camera-orbit="60deg 90deg 85%"
+                        exposure="1" environment-image="neutral">
+                    </model-viewer>
+                </div>
+                <div class="hero-right-col">
+                    <span class="damkar-tagline">3D MODEL PROJECT</span>
+                    <h1 class="damkar-title">TRUK DAMKAR</h1>
                 </div>
             </div>
         </section>
@@ -120,21 +120,7 @@
             </div>
         </section>
 
-        <!-- 3D Artwork / Screenshot Gallery Grid -->
-        <section class="project-gallery-section">
-            <div class="section-container">
-                <h2 class="gallery-heading">3D MODEL IN THIS PROJECT</h2>
-                <div class="gallery-grid">
-                    <!-- Interactive 3D Model -->
-                    <div class="gallery-item gallery-item-centered">
-                        <model-viewer src="../assets/3d/damkar/hino500damkar.glb" alt="3D Model Truk Pemadam Kebakaran"
-                            class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
-                            exposure="1.8" camera-orbit="50deg 90deg 75%">
-                        </model-viewer>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- Collaborate Section -->
         <section id="collaborate" class="collaborate-section">

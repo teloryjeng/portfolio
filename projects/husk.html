@@ -1,118 +1,172 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Husk Eco Tumbler - Desain konsep botol ramah lingkungan berbasis modular dari sekam dan jerami padi, dibuat menggunakan Blender dan Google Gemini.">
     <title>Husk Eco Tumbler | Sururi Ardan</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Alumni+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Antic+Didone&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Alumni+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Antic+Didone&display=swap"
+        rel="stylesheet">
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/transition.css">
     <script src="../script/transition.js" defer></script>
+    <script src="../script/project-loading.js" defer></script>
+    <!-- Model Viewer Support -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/husk.css">
+    <link rel="stylesheet" href="../css/project-overlay.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
-    <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - var(--header-height) - 100px);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-star-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(200px, 40vw, 400px);
-            height: clamp(200px, 40vw, 400px);
-            opacity: 0.05;
-            animation: spin 30s linear infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes spin {
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .cs-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .cs-title {
-            font-family: var(--font-hero-name);
-            font-size: clamp(3.5rem, 8vw, 7.5rem);
-            font-weight: 900;
-            color: var(--text-white);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            filter: drop-shadow(4px 4px 0px #000000);
-            margin: 0 0 1.5rem 0;
-            transform: skewX(-12deg);
-        }
-
-        .cs-status-box {
-            background-color: var(--primary-color);
-            color: var(--text-white);
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 10px 30px;
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            transform: rotate(-3deg) skewX(-10deg);
-            margin-bottom: 3.5rem;
-            display: inline-block;
-        }
-
-        .cs-btn-back {
-            margin-top: 1rem;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="../assets/logo/sdefault.png">
 </head>
 
 <body>
+
     <!-- Header / Navigation -->
     <script src="../script/header.js"></script>
 
     <main>
-        <div class="coming-soon-container">
-            <!-- Custom P5 Star Icon -->
-            <svg class="cs-star-bg" viewBox="0 0 24 24">
-                <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#E52E2E" stroke="#000000" stroke-width="2"/>
-            </svg>
+        <!-- Project Hero Section -->
+        <section class="husk-hero-section">
+            <div class="section-container hero-flex-container">
+                <div class="hero-left-col">
+                    <model-viewer src="../assets/3d/husk/botoleco1.glb" alt="Husk Eco Tumbler 3D Model" auto-rotate
+                        camera-controls shadow-intensity="1" ar disable-pan camera-orbit="34deg 90deg 100%"
+                        orientation="-15deg 0deg 0deg">
+                    </model-viewer>
+                </div>
+                <div class="hero-right-col">
+                    <span class="husk-tagline">ECO TUMBLER</span>
+                    <h1 class="husk-title">HUSK</h1>
+                </div>
+            </div>
+        </section>
 
-            <span class="cs-tagline">3D MODEL & DESIGN</span>
-            <h1 class="cs-title">Husk Eco Tumbler</h1>
-            <div class="cs-status-box">COMING SOON - STILL PROCESS ON EDIT</div>
-            
-            <a href="../project.html" class="btn-primary cs-btn-back">
-                BACK TO PROJECTS
-                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="btn-arrow">
-                    <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
+        <!-- Story / Explanation Section -->
+        <section class="project-story-section">
+            <div class="section-container">
+                <h2 class="story-heading">STORY OF THIS PROJECT</h2>
+
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-container">
+                            <div class="story-image-wrapper">
+                                <img src="../assets/img/husk/Gemini_Generated_Image_wcalluwcalluwcal 1.jpg"
+                                    alt="Husk Component and Material Design Concept" class="story-img">
+                            </div>
+                            <span class="row-number-badge">01</span>
+                        </div>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Sebuah tugas kuliah terkadang bisa menjadi pemantik bagi lahirnya sebuah inovasi yang
+                            berdampak besar bagi lingkungan. Ketika mata kuliah Workshop UI/UX di semester empat
+                            memberikan tantangan untuk merancang sebuah konsep visual botol minum lengkap dengan bentuk
+                            produk dan desain labelnya, sebuah ide revolusioner tentang tumbler eco-friendly mulai
+                            mewujud. Dari sanalah lahir Husk, sebuah nama yang terinspirasi dari sekam atau kulit luar
+                            biji-bijian. Materialnya membawa misi mulia: memanfaatkan jerami padi yang biasanya dibakar
+                            dan mencemari udara, untuk dilahirkan kembali menjadi wadah estetis yang menjaga hidrasi
+                            manusia. Seluruh proses visualisasi bentuk fisik dan detail material alami ini dipahat
+                            secara presisi menggunakan software Blender.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-container">
+                            <div class="story-image-wrapper">
+                                <img src="../assets/img/husk/husk2.jpg" alt="Husk Bottle Floating Visual"
+                                    class="story-img">
+                            </div>
+                            <span class="row-number-badge">02</span>
+                        </div>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Secara filosofis, desain botol Husk mengusung konsep "Simplicity in Versatility". Konsep ini
+                            berhasil mengintegrasikan estetika minimalis dengan fungsi modular yang inovatif. Struktur
+                            tubuh botol dirancang secara cerdas menggunakan sistem detachable base, di mana bagian bawah
+                            botol dapat dilepas dan beralih fungsi menjadi gelas portabel. Sebuah solusi praktis dan
+                            efisien yang sangat ramah bagi mobilitas tinggi para mahasiswa dan pekerja muda.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-container">
+                            <div class="story-image-wrapper">
+                                <img src="../assets/img/husk/husk3.webp" alt="Husk Cap and Body Details"
+                                    class="story-img">
+                            </div>
+                            <span class="row-number-badge">03</span>
+                        </div>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Setiap sudut dari Husk diperhitungkan dengan matang demi kenyamanan pengguna. Lubang
+                            minumnya dibuat dengan sudut ergonomis 60 derajat untuk memberikan aliran air yang presisi
+                            di tengah padatnya aktivitas sehari-hari. Secara visual, botol ini menerapkan prinsip
+                            keseimbangan asimetris yang memikat. Tekstur material dari jerami padi sengaja dipertahankan
+                            untuk memberikan kesan natural dan pengalaman tactile yang unik saat disentuh, menciptakan
+                            identitas ramah lingkungan yang kuat namun tetap terlihat modern serta trendy untuk menemani
+                            aktivitas di lingkungan kantor maupun kampus.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Concluding Paragraph -->
+                <div class="story-conclusion">
+                    <p class="story-paragraph">
+                        Husk bukan lagi sekadar pemenuhan nilai tugas akhir, melainkan sebuah manifestasi bagaimana
+                        desain modern dan kepedulian lingkungan dapat melebur menjadi satu produk yang fungsional.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tools Used Section -->
+        <section class="project-tools-section" style="padding: 4rem 0;">
+            <div class="section-container">
+                <h2 class="tools-heading">TOOLS USED FOR THIS PROJECT</h2>
+                <div class="tools-grid">
+                    <!-- Google Gemini -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/logos_google-gemini.png" alt="Google Gemini Logo" class="tool-logo">
+                        <span class="tool-name">Google Gemini</span>
+                    </div>
+                    <!-- Blender -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/logos_blender.png" alt="Blender Logo" class="tool-logo">
+                        <span class="tool-name">Blender</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborate Section -->
+        <section id="collaborate" class="collaborate-section">
+            <div class="section-container">
+                <span class="collaborate-tagline">READY TO COLLABORATE</span>
+                <h2 class="collaborate-title">Mari kita bangun sesuatu yang luar biasa bersama</h2>
+                <p class="collaborate-subtitle">Terbuka untuk kesempatan magang, project freelance atau kolaborasi
+                    riset.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -120,7 +174,9 @@
 
     <!-- JavaScript Interactions -->
     <script src="../script/script.js"></script>
+
+    <!-- Lightbox Script -->
+    <script src="../script/project-overlay.js"></script>
 </body>
 
 </html>
-

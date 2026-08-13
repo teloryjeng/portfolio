@@ -26,12 +26,12 @@
     // Helper to play SFX dynamically using Web Audio API to bypass IDM
     function playSfx(sfxName, isInteractive = false) {
         if (isLowSpecDevice()) return;
-        
+
         try {
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             }
-            
+
             if (audioCtx.state === 'suspended') {
                 if (!isInteractive) {
                     console.log("AudioContext is suspended and not interactive. Skipping SFX:", sfxName);
@@ -283,7 +283,7 @@
 
         const endTransitionAfterImages = () => {
             const heroImages = Array.from(document.querySelectorAll('.hero-bg-img, .project-hero-bg-img'));
-            
+
             if (heroImages.length === 0) {
                 endTransition();
                 return;

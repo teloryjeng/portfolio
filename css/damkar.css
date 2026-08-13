@@ -1,95 +1,143 @@
 /* Damkar Project Detail Page Styles */
 @import "project-detail-shared.css";
 
-/* 1. Hero Section Styling */
-.project-detail-hero {
+/* 1. Hero Section Styling (Husk-style Two-Column Hero) */
+.damkar-hero-section {
     position: relative;
-    height: 70vh;
-    min-height: 500px;
+    padding-bottom: 7rem;
     width: 100%;
-    overflow: hidden;
-    background-color: transparent;
-}
-
-.hero-bg-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 68%;
-    filter: brightness(0.45) contrast(1.1);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%);
-}
-
-.hero-content-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+    background: linear-gradient(to bottom, #2C1111 75%, transparent 100%);
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 6rem;
-    padding-top: var(--header-height);
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-titles {
-    max-width: 800px;
+.hero-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-left-col {
+    flex: 1.6;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: -12rem;
+}
+
+.damkar-hero-section model-viewer {
+    width: 100%;
+    height: 600px;
+    max-width: 780px;
+    outline: none;
+    --poster-color: transparent;
+    cursor: grab;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+.hero-right-col {
+    flex: 0.6;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: right;
 }
 
-.hero-tagline {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-weight: 900;
+.damkar-tagline {
+    font-family: var(--font-sans);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 500;
     color: var(--primary-color);
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
 
-.hero-main-title {
+.damkar-title {
     font-family: var(--font-hero-name);
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-style: italic;
-    font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 900;
     color: var(--text-white);
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.85));
-}
-
-.hero-logo-img {
-    max-width: clamp(240px, 45vw, 420px);
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.85));
-    margin: 1rem 0;
-}
-
-.hero-subtitle {
-    font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-    font-weight: 500;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
     text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin: 0;
 }
 
+/* 2. Tools Section Styling (Standard Cards with vertical alignment) */
+.project-tools-section .tools-grid {
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.project-tools-section .tool-card {
+    min-width: 160px;
+    padding: 1.25rem 1rem;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.project-tools-section .tool-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-tools-section .tool-card .tool-logo {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: auto;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+}
+
+.project-tools-section .tool-card .tool-name {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Tablet Responsive Style */
+@media (max-width: 1200px) {
+    .hero-left-col {
+        margin-left: -2rem;
+    }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .project-detail-hero {
-        height: 50vh;
-        min-height: 400px;
+    .damkar-hero-section {
+        padding-top: calc(var(--header-height) + 1.5rem);
+        padding-bottom: 3rem;
+    }
+
+    .hero-left-col {
+        margin-left: 0;
+    }
+
+    .hero-flex-container {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-right-col {
+        align-items: center;
+        text-align: center;
+    }
+
+    .damkar-hero-section model-viewer {
+        height: 380px;
     }
 }

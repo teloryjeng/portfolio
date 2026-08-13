@@ -102,3 +102,153 @@
         min-height: 400px;
     }
 }
+
+/* 2. Download Section Styling */
+.download-section-wrapper {
+    margin-top: 5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(28, 28, 30, 0.4);
+    border: 2px solid #2C2C2E;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.95);
+    position: relative;
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    transition: var(--transition-smooth);
+}
+
+.download-section-wrapper:hover {
+    border-color: var(--primary-color);
+    box-shadow: 8px 8px 0px rgba(229, 46, 46, 0.95);
+}
+
+.download-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    color: var(--text-white);
+}
+
+.download-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.download-text-link {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.download-text-link span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+    margin-right: 0.5rem;
+}
+
+.download-action-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: not-allowed;
+}
+
+.btn-disabled {
+    cursor: not-allowed !important;
+    opacity: 0.4 !important;
+    background-color: #3A3A3C !important;
+    color: #8E8E93 !important;
+    pointer-events: none;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: var(--transition-smooth);
+}
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-family: var(--font-hero-name);
+    font-size: 0.95rem; /* Compact size */
+    font-weight: 800;
+    font-style: italic;
+    padding: 5px 12px; /* Compact padding */
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0px #000000;
+    text-transform: uppercase;
+    z-index: 10;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: var(--transition-smooth);
+}
+
+/* Individual letter base state in coming-soon overlay */
+.coming-soon-overlay .p5-btn-letter {
+    display: inline-block;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    color: inherit;
+    background: transparent;
+    border: 2px solid transparent;
+    padding: 2px 0px;
+    margin: 0;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+}
+
+.coming-soon-overlay .p5-btn-space {
+    width: 0.25em; /* Compact space */
+    display: inline-block;
+}
+
+.download-action-wrapper:hover .btn-disabled {
+    transform: translateY(-5px) !important;
+    opacity: 0.55 !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+.download-action-wrapper:hover .coming-soon-overlay {
+    background-color: #0d0d0d !important;
+    box-shadow: 4px 4px 0px var(--primary-color) !important;
+    transform: translate(-50%, -60%) rotate(-7deg) scale(1.04) skewX(-10deg) !important; /* Slightly smaller scale */
+}
+
+/* Hover state: convert to stop-motion collage letters (compact layout for long text) */
+.download-action-wrapper:hover .coming-soon-overlay .p5-btn-letter {
+    padding: 2px 4px; /* Compact padding per letter */
+    margin: 0 0.5px; /* Compact margin */
+    font-family: 'Persona 5';
+    font-size: 0.78rem; /* Compact font size */
+    font-weight: 900;
+    font-style: italic;
+    background-color: var(--bg);
+    color: var(--fg);
+    border: 1.5px solid #000000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    filter: drop-shadow(1.5px 1.5px 0px rgba(0, 0, 0, 0.95));
+    animation: p5-letter-jitter 0.35s step-end infinite;
+    clip-path: polygon(2% 2%, 98% 3%, 95% 97%, 3% 94%);
+}
+
+.download-buttons-group {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}

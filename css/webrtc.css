@@ -1,0 +1,116 @@
+/* WebRTC Remote Desktop Project Detail Page Styles */
+@import "project-detail-shared.css";
+
+/* 1. Hero Section Styling */
+.webrtc-hero-section {
+    position: relative;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 8rem;
+    width: 100%;
+    background: linear-gradient(to bottom, #1A1A1A 85%, transparent 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-left-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-screenshot-img {
+    width: 100%;
+    max-width: 680px;
+    /* laptop screenshot size */
+    height: auto;
+    margin-bottom: 6rem;
+}
+
+.hero-right-col {
+    flex: 1.5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.webrtc-hero-section .hero-logo-img {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 10px 20px rgba(255, 255, 255, 0.1));
+}
+
+/* 2. Tools Grid Layout Override (Fit in one row) */
+.project-tools-section .tools-grid {
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+.project-tools-section .tool-card {
+    min-width: 140px;
+    padding: 1.25rem 1rem;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-tools-section .tool-card .tool-logo {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.project-tools-section .tool-card .tool-name {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Adjust Node.js, Socket.io, and RobotJS logos specifically */
+.project-tools-section .tool-card img[src*="nodejs"],
+.project-tools-section .tool-card img[src*="socketio"],
+.project-tools-section .tool-card img[src*="Vectorized"] {
+    width: 130px;
+    height: auto;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+/* Result Section Button Container */
+.webrtc-result-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .webrtc-hero-section {
+        padding-top: calc(var(--header-height) + 2rem);
+        padding-bottom: 2rem;
+    }
+
+    .hero-flex-container {
+        flex-direction: column;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-screenshot-img {
+        max-width: 100%;
+    }
+
+    .webrtc-hero-section .hero-logo-img {
+        max-width: 240px;
+    }
+}

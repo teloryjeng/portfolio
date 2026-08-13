@@ -33,7 +33,7 @@
                         </svg>
                     </a>
                     <!-- CV -->
-                    <a href="#" class="social-icon cv-icon" aria-label="Download CV" title="Curriculum Vitae">
+                    <a href="https://drive.google.com/file/d/18nSYuDBT_XyCu6ICL9xajm6nv6Y0Upha/view?usp=drive_link" class="social-icon cv-icon" aria-label="Download CV" title="Curriculum Vitae" target="_blank" rel="noopener noreferrer">
                         <span class="cv-text">CV</span>
                     </a>
                 </div>

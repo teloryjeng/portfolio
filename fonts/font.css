@@ -30,3 +30,43 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Persona 5 Menu';
+    src: url('Persona5MenuFontPrototype-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Persona 5';
+    src: url('Markin-LT-Ultra-Bold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Persona 5';
+    src: url('Markin-LT-Ultra-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Skip Std';
+    src: url('FOT-SkipStdB.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'New Rodin Pro';
+    src: url('FOT-NewRodinProB.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}

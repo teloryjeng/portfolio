@@ -12,12 +12,14 @@ body.p5-transition-active {
     width: 100vw;
     height: 100vh;
     z-index: 999999;
-    pointer-events: auto; /* Block interactions by default during transitions */
+    pointer-events: auto;
+    /* Block interactions by default during transitions */
     overflow: hidden;
 }
 
 #p5-transition-overlay.p5-loaded {
-    pointer-events: none; /* Allow interaction when page is loaded */
+    pointer-events: none;
+    /* Allow interaction when page is loaded */
 }
 
 /* Slashes Layout and Configuration */
@@ -65,18 +67,51 @@ body.p5-transition-active {
 }
 
 /* Slide-in (exit transition, default state, i.e. when NOT loaded) */
-.p5-slash-1 { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0s; }
-.p5-slash-2 { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.08s; }
-.p5-slash-3 { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.16s; }
-.p5-slash-4 { transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.24s; }
-.p5-bg-cover { transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s; }
+.p5-slash-1 {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0s;
+}
+
+.p5-slash-2 {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.08s;
+}
+
+.p5-slash-3 {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.16s;
+}
+
+.p5-slash-4 {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.24s;
+}
+
+.p5-bg-cover {
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.3s;
+}
 
 /* Slide-out (intro transition, when .p5-loaded is applied) */
-.p5-loaded .p5-slash-1 { transform: skewX(-25deg) translateX(-120vw); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.35s; }
-.p5-loaded .p5-slash-2 { transform: skewX(-25deg) translateX(120vw); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.28s; }
-.p5-loaded .p5-slash-3 { transform: skewX(-25deg) translateX(-120vw); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.21s; }
-.p5-loaded .p5-slash-4 { transform: skewX(-25deg) translateX(120vw); transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.14s; }
-.p5-loaded .p5-bg-cover { transform: skewX(-25deg) translateX(-350vw); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.05s; }
+.p5-loaded .p5-slash-1 {
+    transform: skewX(-25deg) translateX(-120vw);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.35s;
+}
+
+.p5-loaded .p5-slash-2 {
+    transform: skewX(-25deg) translateX(120vw);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.28s;
+}
+
+.p5-loaded .p5-slash-3 {
+    transform: skewX(-25deg) translateX(-120vw);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.21s;
+}
+
+.p5-loaded .p5-slash-4 {
+    transform: skewX(-25deg) translateX(120vw);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) 0.14s;
+}
+
+.p5-loaded .p5-bg-cover {
+    transform: skewX(-25deg) translateX(-350vw);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.05s;
+}
 
 /* Loading Container in the Bottom Right */
 .p5-loading-container {
@@ -113,9 +148,11 @@ body.p5-transition-active {
     0% {
         transform: scale(1) rotate(0deg);
     }
+
     50% {
         transform: scale(1.2) rotate(180deg);
     }
+
     100% {
         transform: scale(1) rotate(360deg);
     }
@@ -132,12 +169,12 @@ body.p5-transition-active {
     display: inline-block;
     padding: 6px 12px;
     margin: 0 1px;
-    font-family: 'Racing Sans One', 'Impact', sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
+    font-family: 'Persona 5', sans-serif;
+    font-weight: 700;
     font-style: italic;
+    text-transform: uppercase;
     line-height: 1;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.95));
     border: 2px solid #000000;
     animation: p5-letter-jitter 0.35s step-end infinite;
@@ -151,12 +188,16 @@ body.p5-transition-active {
 
 /* Jitter Animation (choppy stop-motion feel) */
 @keyframes p5-letter-jitter {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(var(--rot)) scale(var(--s)) translateY(var(--ty));
     }
+
     33% {
         transform: rotate(calc(var(--rot) + 2.5deg)) scale(calc(var(--s) * 1.03)) translateY(calc(var(--ty) - 2px)) translateX(-1px);
     }
+
     66% {
         transform: rotate(calc(var(--rot) - 2.5deg)) scale(calc(var(--s) * 0.97)) translateY(calc(var(--ty) + 2px)) translateX(1px);
     }
@@ -197,20 +238,24 @@ body.p5-transition-active {
     }
 
     /* Slide-out animation coordinates for mobile (matching the smaller -15deg skew) */
-    .p5-loaded .p5-slash-1 { 
-        transform: skewX(-15deg) translateX(-150vw); 
+    .p5-loaded .p5-slash-1 {
+        transform: skewX(-15deg) translateX(-150vw);
     }
-    .p5-loaded .p5-slash-2 { 
-        transform: skewX(-15deg) translateX(150vw); 
+
+    .p5-loaded .p5-slash-2 {
+        transform: skewX(-15deg) translateX(150vw);
     }
-    .p5-loaded .p5-slash-3 { 
-        transform: skewX(-15deg) translateX(-150vw); 
+
+    .p5-loaded .p5-slash-3 {
+        transform: skewX(-15deg) translateX(-150vw);
     }
-    .p5-loaded .p5-slash-4 { 
-        transform: skewX(-15deg) translateX(150vw); 
+
+    .p5-loaded .p5-slash-4 {
+        transform: skewX(-15deg) translateX(150vw);
     }
-    .p5-loaded .p5-bg-cover { 
-        transform: skewX(-15deg) translateX(-350vw); 
+
+    .p5-loaded .p5-bg-cover {
+        transform: skewX(-15deg) translateX(-350vw);
     }
 
     /* Center the loading text and star spinner perfectly on mobile */
@@ -220,12 +265,16 @@ body.p5-transition-active {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        flex-direction: column; /* Stack star and text vertically */
+        flex-direction: column;
+        /* Stack star and text vertically */
         gap: 15px;
+        width: 90%;
+        align-items: center;
     }
-    
+
     .p5-letter {
         padding: 5px 10px;
-        font-size: 1.4rem !important; /* Force smaller size on mobile */
+        font-size: 1.4rem !important;
+        /* Force smaller size on mobile */
     }
 }

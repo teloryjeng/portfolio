@@ -31,11 +31,16 @@
     max-width: 600px;
 }
 
+.hero-first-name,
+.hero-last-name {
+    font-family: 'Persona 5 Menu', sans-serif;
+}
+
 .about-hero-sub {
     font-family: var(--font-heading);
     font-size: clamp(1rem, 2.5vw, 1.4rem);
     letter-spacing: 0.1em;
-    color: var(--text-white);
+    color: var(--text-muted);
     margin-top: 1.5rem;
     font-weight: 500;
 }

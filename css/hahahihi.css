@@ -1,0 +1,54 @@
+/* HahaHihi Project Detail Page Styles */
+@import "project-detail-shared.css";
+
+/* Align the background cover photo of the kids */
+.project-detail-hero .hero-bg-img {
+    object-position: center 50%;
+}
+
+.hero-subtitle {
+    color: var(--text-white)
+}
+
+.hero-titles {
+    transform: translateY(-1.5rem);
+}
+
+/* Story Conclusion Section */
+.story-conclusion {
+    max-width: 900px;
+    margin: 0rem auto 4rem auto;
+    text-align: center;
+}
+
+.story-conclusion .story-paragraph {
+    font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+    color: var(--text-white);
+}
+
+/* Result Section Button Container */
+.hahahihi-result-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Adjust Tools Grid spacing so 6 cards fit in one row on desktop */
+.project-tools-section .tools-grid {
+    gap: 1.25rem;
+}
+
+.project-tools-section .tool-card {
+    min-width: 140px;
+    padding: 1.25rem 1rem;
+}
+
+/* Make the Node.js wordmark logo visually larger and clear */
+.project-tools-section .tool-card img[src*="nodejs"] {
+    width: 130px;
+    height: auto;
+    max-height: 55px;
+    object-fit: contain;
+}

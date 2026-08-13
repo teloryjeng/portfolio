@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtucare | Sururi Ardan</title>
+    <meta name="description"
+        content="Virtucare - Simulasi Alat Kesehatan Edukatif berbasis Virtual Reality oleh Muhammad Sururi Ardan.">
+    <title>Virtucare VR | Sururi Ardan</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,110 +18,193 @@
     <link rel="stylesheet" href="../css/transition.css">
     <script src="../script/transition.js" defer></script>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/virtucare.css">
+    <link rel="stylesheet" href="../css/project-overlay.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
-    <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - var(--header-height) - 100px);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-star-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(200px, 40vw, 400px);
-            height: clamp(200px, 40vw, 400px);
-            opacity: 0.05;
-            animation: spin 30s linear infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes spin {
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        .cs-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .cs-title {
-            font-family: var(--font-hero-name);
-            font-size: clamp(3.5rem, 8vw, 7.5rem);
-            font-weight: 900;
-            color: var(--text-white);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            filter: drop-shadow(4px 4px 0px #000000);
-            margin: 0 0 1.5rem 0;
-            transform: skewX(-12deg);
-        }
-
-        .cs-status-box {
-            background-color: var(--primary-color);
-            color: var(--text-white);
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 10px 30px;
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            transform: rotate(-3deg) skewX(-10deg);
-            margin-bottom: 3.5rem;
-            display: inline-block;
-        }
-
-        .cs-btn-back {
-            margin-top: 1rem;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="../assets/logo/sdefault.png">
 </head>
 
 <body>
+
     <!-- Header / Navigation -->
     <script src="../script/header.js"></script>
 
     <main>
-        <div class="coming-soon-container">
-            <!-- Custom P5 Star Icon -->
-            <svg class="cs-star-bg" viewBox="0 0 24 24">
-                <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#E52E2E" stroke="#000000"
-                    stroke-width="2" />
-            </svg>
+        <!-- Project Hero Section -->
+        <section class="project-detail-hero">
+            <div class="hero-bg-container">
+                <img src="../assets/img/virtucare/SnapInsta.to_AQN3htmh5LnFP45l3ztlNN7m_hV9OZ0yocz6ahKhLAiziot_ZjzaBGj3zeUpfsQ8drNidHSwFOE-DWotgXq2fMdYD5IYbYHO7fQAyfo.mp4_20260806_234324.733.jpg"
+                    alt="Virtucare VR Cover" class="hero-bg-img">
+            </div>
+            <div class="hero-content-overlay">
+                <div class="section-container">
+                    <div class="hero-titles">
+                        <span class="hero-tagline">VIRTUAL REALITY SIMULATION</span>
+                        <h1 class="hero-main-title">VIRTUCARE</h1>
+                        <span class="hero-subtitle">Simulasi Alat Kesehatan Edukatif</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <span class="cs-tagline">VIRTUAL REALITY GAME</span>
-            <h1 class="cs-title">Virtucare</h1>
-            <div class="cs-status-box">COMING SOON - STILL PROCESS ON EDIT</div>
+        <!-- Story / Explanation Section -->
+        <section class="project-story-section">
+            <div class="section-container">
+                <h2 class="story-heading">STORY OF THIS PROJECT</h2>
 
-            <a href="../project.html" class="btn-primary cs-btn-back">
-                BACK TO PROJECTS
-                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="btn-arrow">
-                    <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/virtucare/WhatsApp Image 2026-08-07 at 00.18.26.jpeg"
+                                alt="Pengembangan Kode dan Persiapan Hardware" class="story-img">
+                        </div>
+                        <span class="row-number-badge">01</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Langkah awal di semester 3 membawa sebuah tantangan
+                            besar dalam mata kuliah Workshop Augmented Reality /
+                            Virtual Reality. Tantangan itu mewujud dalam sebuah proyek
+                            ambisius bernama VirtuCare, sebuah game edukasi berbasis
+                            Virtual Reality (VR) yang dirancang khusus untuk
+                            mengenalkan alat -alat dasar kedokteran. Alih -alih
+                            menggunakan game engine konvensional, proyek ini
+                            dibangun menggunakan engine Babylon.JS, memungkinkan
+                            dunia virtual tersebut diakses langsung dengan mudah
+                            melalui halaman website.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/virtucare/WhatsApp Image 2026-08-07 at 00.13.42.jpeg"
+                                alt="Uji Coba Interaktif VR Standalone" class="story-img">
+                        </div>
+                        <span class="row-number-badge">02</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Proses pengembangan dilakukan secara intensif
+                            dengan mengandalkan device Meta Quest 2 sebagai
+                            perangkat utama untuk menguji setiap interaksi. Di
+                            dalam tim, fokus utama ditumpahkan pada dua sektor
+                            krusial: merancang visual UI Frontend agar tetap
+                            intuitif di dalam ruang virtual, serta menyusun sistem
+                            physics agar setiap gerakan tangan dan interaksi objek
+                            terasa nyata bagi pengguna.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/virtucare/SnapInsta.to_AQN3htmh5LnFP45l3ztlNN7m_hV9OZ0yocz6ahKhLAiziot_ZjzaBGj3zeUpfsQ8drNidHSwFOE-DWotgXq2fMdYD5IYbYHO7fQAyfo.mp4_20260806_234200.740.jpg"
+                                alt="Menu Edukatif Alat Medis Kain Kasa" class="story-img">
+                        </div>
+                        <span class="row-number-badge">03</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Di dalam simulasi medis, user akan ditemani oleh asisten robotik berkostum suster
+                            bernama <strong>MediBot</strong> yang bertugas memberikan panduan. Ketika salah satu objek
+                            seperti Kain Kasa diaktifkan, modul pembelajaran akan memunculkan jendela teks interaktif
+                            yang menjelaskan fungsi steril, kegunaan medis, serta petunjuk penutupan luka terbuka secara
+                            higienis bagi pengguna.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 4: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/virtucare/WhatsApp Image 2026-08-06 at 23.45.30.jpeg"
+                                alt="Kerja Sama Tim Pengembang Virtucare" class="story-img">
+                        </div>
+                        <span class="row-number-badge">04</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Perjalanan melahirkan VirtuCare menjadi sebuah roda
+                            berputar yang penuh dengan dinamika suka dan duka.
+                            Kilas balik perjuangan dimulai dari momen penuh
+                            kelegaan saat konsep game ini akhirnya mendapat
+                            lampu hijau dari dosen pembimbing. Namun, fase
+                            berikutnya adalah ujian kesabaran yang
+                            sesungguhnya. Hari-hari dipenuhi dengan proses
+                            debugging kode yang menguras pikiran, di mana satu
+                            baris kesalahan kecil bisa membuat seluruh simulasi
+                            VR mendadak lumpuh dan tidak berjalan semestinya
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Tools Used Section -->
+        <section class="project-tools-section" style="padding: 4rem 0;">
+            <div class="section-container">
+                <h2 class="story-heading">TOOLS USED FOR THIS PROJECT</h2>
+                <div class="tools-grid">
+                    <!-- HTML5 -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/HTML5_logo_and_wordmark.svg.webp" alt="HTML5 Logo" class="tool-logo">
+                        <span class="tool-name">HTML</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/skill-icons_javascript.png" alt="JavaScript Logo" class="tool-logo">
+                        <span class="tool-name">JAVASCRIPT</span>
+                    </div>
+                    <!-- Babylon.js -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/Babylon_logo_v4.png" alt="BabylonJS Logo" class="tool-logo">
+                        <span class="tool-name">BABYLON.JS</span>
+                    </div>
+                    <!-- Meta Quest 2 -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/meta-3.svg" alt="Meta Quest 2 Logo" class="tool-logo">
+                        <span class="tool-name">META QUEST 2</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Section (YouTube Video Embed) -->
+        <section class="project-result-section" style="padding: 4rem 0;">
+            <div class="section-container">
+                <h2 class="story-heading">DEMO & GAMEPLAY VIDEO</h2>
+                <div class="video-result-container">
+                    <div class="video-result-wrapper">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/l_lBwP8ZRIQ?si=ClydG6RIgJGFweSf"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborate Section -->
+        <section id="collaborate" class="collaborate-section">
+            <div class="section-container">
+                <span class="collaborate-tagline">READY TO COLLABORATE</span>
+                <h2 class="collaborate-title">Mari kita bangun sesuatu yang luar biasa bersama</h2>
+                <p class="collaborate-subtitle">Terbuka untuk kesempatan magang, project freelance atau kolaborasi
+                    riset.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -127,6 +212,9 @@
 
     <!-- JavaScript Interactions -->
     <script src="../script/script.js"></script>
+
+    <!-- Lightbox Script -->
+    <script src="../script/project-overlay.js"></script>
 </body>
 
 </html>

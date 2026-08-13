@@ -80,7 +80,7 @@
     font-family: var(--font-heading);
     font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: 500;
-    color: var(--text-muted);
+    color: var(--text-white);
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
@@ -127,6 +127,11 @@
 .story-image-col {
     flex: 1;
     position: relative;
+}
+
+.story-image-container {
+    position: relative;
+    width: 100%;
 }
 
 .story-text-col {

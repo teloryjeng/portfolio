@@ -1,118 +1,199 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WebRTC Remote Desktop Viewer - Sistem kendali jarak jauh berbasis web menggunakan WebRTC, Socket.io, Node.js, dan RobotJS.">
     <title>WebRTC Remote Desktop | Sururi Ardan</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Alumni+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Antic+Didone&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Alumni+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Antic+Didone&display=swap"
+        rel="stylesheet">
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/transition.css">
     <script src="../script/transition.js" defer></script>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/webrtc.css">
+    <link rel="stylesheet" href="../css/project-overlay.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
-    <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - var(--header-height) - 100px);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-star-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(200px, 40vw, 400px);
-            height: clamp(200px, 40vw, 400px);
-            opacity: 0.05;
-            animation: spin 30s linear infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes spin {
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .cs-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .cs-title {
-            font-family: var(--font-hero-name);
-            font-size: clamp(3.5rem, 8vw, 7.5rem);
-            font-weight: 900;
-            color: var(--text-white);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            filter: drop-shadow(4px 4px 0px #000000);
-            margin: 0 0 1.5rem 0;
-            transform: skewX(-12deg);
-        }
-
-        .cs-status-box {
-            background-color: var(--primary-color);
-            color: var(--text-white);
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 10px 30px;
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            transform: rotate(-3deg) skewX(-10deg);
-            margin-bottom: 3.5rem;
-            display: inline-block;
-        }
-
-        .cs-btn-back {
-            margin-top: 1rem;
-        }
-    </style>
+    <link rel="apple-touch-icon" href="../assets/logo/sdefault.png">
 </head>
 
 <body>
+
     <!-- Header / Navigation -->
     <script src="../script/header.js"></script>
 
     <main>
-        <div class="coming-soon-container">
-            <!-- Custom P5 Star Icon -->
-            <svg class="cs-star-bg" viewBox="0 0 24 24">
-                <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#E52E2E" stroke="#000000" stroke-width="2"/>
-            </svg>
+        <!-- Project Hero Section -->
+        <section class="webrtc-hero-section">
+            <div class="section-container hero-flex-container">
+                <div class="hero-left-col">
+                    <img src="../assets/img/webrtc/Screenshot 2026-06-06 154802 2.jpg"
+                        alt="WebRTC Remote Desktop Viewer Screenshot" class="hero-screenshot-img">
+                </div>
+                <div class="hero-right-col">
+                    <img src="../assets/logo/webrtc.png" alt="WebRTC Logo" class="hero-logo-img">
+                </div>
+            </div>
+        </section>
 
-            <span class="cs-tagline">WEB DEVELOPMENT</span>
-            <h1 class="cs-title">WebRTC Desktop</h1>
-            <div class="cs-status-box">COMING SOON - STILL PROCESS ON EDIT</div>
-            
-            <a href="../project.html" class="btn-primary cs-btn-back">
-                BACK TO PROJECTS
-                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="btn-arrow">
-                    <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
+        <!-- Story / Explanation Section -->
+        <section class="project-story-section">
+            <div class="section-container">
+                <h2 class="story-heading">STORY OF THIS PROJECT</h2>
+
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-container">
+                            <div class="story-image-wrapper">
+                                <img src="../assets/img/webrtc/image 13.jpg" alt="Remote Desktop Screen Share"
+                                    class="story-img">
+                            </div>
+                            <span class="row-number-badge">01</span>
+                        </div>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Batas ruang dan perangkat seolah melebur dalam ujian akhir mata kuliah Workshop Jaringan
+                            Multimedia pada semester 4. Sebuah projek ambisius dirancang untuk menjawab tantangan
+                            tersebut: WebRTC Remote Desktop Viewer. Sistem ini memungkinkan dua komputer untuk saling
+                            mengontrol atau meremote salah satu perangkat dalam satu jaringan lokal yang sama.
+                            Terinspirasi dari kepraktisan software seperti TeamViewer, projek ini dibangun ulang dalam
+                            versi yang lebih sederhana namun tetap andal dengan mengandalkan WebRTC sebagai komponen
+                            utama transmisi data.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-container">
+                            <div class="story-image-wrapper">
+                                <img src="../assets/img/webrtc/474550478_1411770806865489_8178447133579520900_n 12.jpg"
+                                    alt="WebRTC Multi-screen Remote Desktop view" class="story-img">
+                            </div>
+                            <span class="row-number-badge">02</span>
+                        </div>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Membangun sebuah jembatan kendali jarak jauh tentu membutuhkan fondasi teknologi yang solid
+                            agar interaksi terasa mulus. Aliran data tidak hanya sekadar terhubung tetapi juga disokong
+                            oleh Socket.io untuk merajut komunikasi dua arah secara real-time dan berbasis event antara
+                            klien (seperti peramban web) dan server. Sementara itu, untuk menghadirkan sensasi kendali
+                            yang nyata, digunakanlah RobotJS. Komponen inilah yang menjadi "tangan virtual" di balik
+                            layar, bertugas menggerakkan kursor secara presisi ke koordinat layar tertentu, melakukan
+                            klik kiri maupun kanan, eksekusi drag-and-drop, hingga menekan tombol dan kombinasi pintasan
+                            keyboard.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-container">
+                            <div class="story-image-wrapper">
+                                <img src="../assets/img/webrtc/image 14.jpg" alt="WebRTC Connection Interface with GitHub"
+                                    class="story-img">
+                            </div>
+                            <span class="row-number-badge">03</span>
+                        </div>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Merangkai berbagai teknologi kompleks ini menjadi satu kesatuan yang fungsional memberikan
+                            pengalaman berharga dalam memahami dinamika jaringan komputer. Projek ini bukan sekadar
+                            pemenuhan syarat nilai akhir semester, melainkan sebuah langkah nyata dalam menguasai aliran
+                            data multimedia interaktif yang efisien dan aplikatif.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tools Used Section -->
+        <section class="project-tools-section" style="padding: 4rem 0;">
+            <div class="section-container">
+                <h2 class="tools-heading">TOOLS USED FOR THIS PROJECT</h2>
+                <div class="tools-grid">
+                    <!-- HTML5 -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/HTML5_logo_and_wordmark.svg.webp" alt="HTML5 Logo" class="tool-logo">
+                        <span class="tool-name">HTML</span>
+                    </div>
+                    <!-- CSS3 -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/logos_css.png" alt="CSS3 Logo" class="tool-logo">
+                        <span class="tool-name">CSS</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/skill-icons_javascript.png" alt="JavaScript Logo" class="tool-logo">
+                        <span class="tool-name">JS</span>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_nodejs-wordmark.png" alt="Node.js Logo" class="tool-logo">
+                        <span class="tool-name">NODE.JS</span>
+                    </div>
+                    <!-- Socket.io -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/socketio.svg" alt="Socket.io Logo" class="tool-logo">
+                        <span class="tool-name">SOCKET.IO</span>
+                    </div>
+                    <!-- RobotJS -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/image 15 [Vectorized].png" alt="RobotJS Logo" class="tool-logo">
+                        <span class="tool-name">ROBOTJS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Section (GitHub Link) -->
+        <section class="project-result-section" style="padding: 4rem 0;">
+            <div class="section-container">
+                <h2 class="result-heading">RESULT OF THIS PROJECT</h2>
+                <div class="webrtc-result-btn-container">
+                    <a href="https://github.com/teloryjeng/webrtc-remote-desktop.git" class="btn-primary"
+                        target="_blank" rel="noopener noreferrer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                        Github Repository
+                        <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="btn-arrow">
+                            <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborate Section -->
+        <section id="collaborate" class="collaborate-section">
+            <div class="section-container">
+                <span class="collaborate-tagline">READY TO COLLABORATE</span>
+                <h2 class="collaborate-title">Mari kita bangun sesuatu yang luar biasa bersama</h2>
+                <p class="collaborate-subtitle">Terbuka untuk kesempatan magang, project freelance atau kolaborasi
+                    riset.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -120,7 +201,9 @@
 
     <!-- JavaScript Interactions -->
     <script src="../script/script.js"></script>
+
+    <!-- Lightbox Script -->
+    <script src="../script/project-overlay.js"></script>
 </body>
 
 </html>
-

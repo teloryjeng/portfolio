@@ -64,6 +64,10 @@
     max-width: 580px;
 }
 
+.hero-first-name,
+.hero-last-name {
+    font-family: 'Persona 5 Menu', sans-serif;
+}
 
 .hero-subtitles {
     display: flex;
@@ -73,7 +77,7 @@
     font-size: 1.3rem;
     font-weight: 450;
     letter-spacing: 0.1em;
-    color: var(--text-white);
+    color: var(--text-muted);
     flex-wrap: wrap;
 }
 
