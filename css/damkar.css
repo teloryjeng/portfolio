@@ -124,6 +124,9 @@
 
     .hero-left-col {
         margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-flex-container {

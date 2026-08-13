@@ -146,6 +146,12 @@
         text-align: center;
     }
 
+    .hero-left-col {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
     .hero-right-col {
         align-items: center;
         text-align: center;
