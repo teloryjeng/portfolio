@@ -700,3 +700,21 @@
     background-size: 200% 100% !important;
     animation: p5-skeleton-loading 1.5s infinite linear !important;
 }
+
+/* Ensure model-viewer has relative positioning so absolute posters size correctly, 
+   and apply dynamic skeleton background to hero model-viewer elements */
+.damkar-hero-section model-viewer,
+.husk-hero-section model-viewer {
+    position: relative !important;
+    overflow: hidden !important;
+    background: linear-gradient(90deg, #121212 25%, #1a1a1a 50%, #121212 75%) !important;
+    background-size: 200% 100% !important;
+    animation: p5-skeleton-loading 1.5s infinite linear !important;
+}
+
+/* Turn off background and animation once loaded to save CPU/GPU cycles */
+.damkar-hero-section model-viewer:not([loading])[src],
+.husk-hero-section model-viewer:not([loading])[src] {
+    background: transparent !important;
+    animation: none !important;
+}
