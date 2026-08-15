@@ -1,0 +1,165 @@
+/* Leclerc Poster Design Project Detail Page Styles */
+@import "project-detail-shared.css";
+
+/* 1. Hero Background Alignment & Blending */
+.project-detail-hero {
+    background-color: #ab171c !important;
+    /* Ferrari Red background for split layout */
+    height: 85vh !important;
+    /* Made taller to match the red line request */
+    min-height: 600px !important;
+}
+
+.project-detail-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(13, 13, 13, 0) 65%, #0d0d0d 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-bg-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(171, 23, 28, 0) 40%, #ab171c 55%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.leclerc-hero-bg-img {
+    width: 55%;
+    /* Limit to left side of the screen */
+    object-fit: cover;
+    object-position: center 15%;
+    /* Focuses on Charles Leclerc's face and helmet */
+}
+
+/* 2. Hero Typography */
+.leclerc-hero-titles {
+    position: absolute !important;
+    right: 7% !important;
+    /* Position it cleanly in the center of the right red background */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 3 !important;
+    /* Stack above the bottom fade-down gradient overlay */
+    max-width: 650px;
+    /* Increased to fit larger text without wrapping */
+    text-align: center;
+    /* Center align text inside container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center flex items */
+    gap: 0.25rem;
+}
+
+.leclerc-hero-tagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    /* Increased size */
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.15em;
+    /* Increased spacing */
+    text-transform: uppercase;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.4));
+}
+
+.leclerc-hero-main-title {
+    font-family: 'Genty', sans-serif;
+    font-size: clamp(4.5rem, 11vw, 9.5rem);
+    /* Increased size */
+    color: #ffffff;
+    /* White text matching the mockup */
+    line-height: 1;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.25));
+    margin-top: 0.25rem;
+}
+
+/* 3. Story Aspect Ratio Corrections */
+.leclerc-porsche-wrapper {
+    aspect-ratio: 735/919 !important;
+    /* Portrait 4:5 */
+}
+
+.leclerc-ferrari-wrapper {
+    aspect-ratio: 805/1137 !important;
+    /* Portrait 0.708 */
+}
+
+/* 4. Tools Grid Layout Override (Fit in one row) */
+.project-tools-section .tools-grid {
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* 5. Story Conclusion Styling */
+.story-conclusion-container {
+    max-width: 1050px;
+    margin: 4rem auto 2rem auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.story-conclusion {
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 1.5vw, 1rem);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: var(--text-white);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* 6. Responsive Hero Layout overrides */
+@media (max-width: 768px) {
+    .leclerc-hero-bg-img {
+        width: 100% !important;
+        /* Full width background on mobile devices */
+        object-position: center 5% !important;
+        /* Align close to top */
+        transform: scale(1.35) !important;
+        /* Zoom in to crop out F1 car at the bottom */
+        transform-origin: center top !important;
+        /* Anchor zoom at the top of the poster */
+    }
+
+    .hero-bg-container::after {
+        display: none !important;
+        /* Hide horizontal blend overlay on mobile */
+    }
+
+    .leclerc-hero-titles {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+
+    .leclerc-hero-tagline {
+        font-size: clamp(2rem, 7vw, 3.2rem) !important;
+        /* Significantly enlarged on mobile */
+        filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8)) !important;
+        /* Stronger drop shadow for contrast */
+    }
+
+    .leclerc-hero-main-title {
+        font-size: clamp(6.5rem, 22vw, 10.5rem) !important;
+        /* Massive cursive title on mobile */
+        filter: drop-shadow(5px 5px 0px rgba(0, 0, 0, 0.8)) drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5)) !important;
+        /* Strong drop-shadow stack for supreme legibility */
+    }
+}

@@ -1,0 +1,199 @@
+/* Immersive Fiesta Lower Third Project Detail Page Styles */
+@import "project-detail-shared.css";
+
+/* 1. Hero Section Styling */
+.if-hero-section {
+    position: relative;
+    padding-top: calc(var(--header-height) + 3rem);
+    padding-bottom: 7rem;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent 65%, #0d0d0d 100%),
+                radial-gradient(circle at center, #1b0f24 0%, #0d0d0d 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.if-hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-left-col {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Lowerthird stacked preview cards on the left */
+.lowerthird-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 480px;
+    z-index: 2;
+}
+
+.lowerthird-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.7));
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.3s ease;
+}
+
+/* Angled offset transformations to make them feel organic and layout-dynamic */
+.lt-kevin {
+    transform: rotate(-1.5deg) translateX(-10px);
+}
+
+.lt-miftakhul {
+    transform: rotate(2deg) translateX(15px);
+}
+
+.lt-workshop {
+    max-width: 320px;
+    transform: rotate(-3deg) translateY(-5px);
+}
+
+/* Hover hover effects */
+.lowerthird-img:hover {
+    transform: scale(1.05) rotate(0deg) translateY(-5px);
+    filter: drop-shadow(0px 12px 25px rgba(162, 89, 255, 0.3));
+    z-index: 5;
+}
+
+.hero-right-col {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.if-hero-section .hero-logo-img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 10px 30px rgba(162, 89, 255, 0.2));
+    animation: floating-logo 5s ease-in-out infinite alternate;
+}
+
+@keyframes floating-logo {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-8px) rotate(0.5deg);
+    }
+}
+
+/* 2. Story Section Customizations for Auto-Loop Videos */
+.story-video-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none; /* Block mouse interactions to prevent IDM hover popups */
+}
+
+.video-blocker-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: transparent;
+    pointer-events: auto; /* Catches mouse hovers so IDM cannot target the video element behind it */
+}
+
+.story-video-banner {
+    aspect-ratio: 864/115 !important; /* Custom aspect ratio for lower thirds to prevent horizontal cropping */
+}
+
+.story-conclusion-container {
+    max-width: 900px;
+    margin: 4rem auto 2rem auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.story-conclusion {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2.8vw, 1.55rem);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--text-white);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* 3. Tool Cards Theming overrides (Purple Accent glow) */
+.project-tools-section .tool-card:hover {
+    border-color: #a259ff;
+    box-shadow: 0 10px 20px rgba(162, 89, 255, 0.2);
+}
+
+/* 4. Responsive Styles */
+@media (max-width: 992px) {
+    .if-hero-section {
+        padding-top: calc(var(--header-height) + 2rem);
+        padding-bottom: 5rem;
+        height: auto;
+        min-height: auto;
+    }
+
+    .if-hero-container {
+        flex-direction: column;
+        gap: 3.5rem;
+        text-align: center;
+    }
+
+    .hero-left-col,
+    .hero-right-col {
+        width: 100%;
+    }
+
+    .lowerthird-stack {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+    
+    .lt-kevin, .lt-miftakhul, .lt-workshop {
+        transform: none; /* Reset rotation angles on mobile to maximize viewport grid space */
+    }
+    
+    .lowerthird-img:hover {
+        transform: scale(1.03) translateY(-3px);
+    }
+
+    .if-hero-section .hero-logo-img {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 576px) {
+    .lowerthird-stack {
+        max-width: 280px;
+    }
+    
+    .lt-workshop {
+        max-width: 200px;
+    }
+    
+    .if-hero-section .hero-logo-img {
+        max-width: 300px;
+    }
+}

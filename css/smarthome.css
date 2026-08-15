@@ -1,0 +1,193 @@
+/* Smart Home Project Detail Page Styles */
+@import "project-detail-shared.css";
+
+/* 1. Hero Section Styling */
+.smarthome-hero-section {
+    position: relative;
+    height: 75vh;
+    min-height: 550px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #D3D0C8;
+    /* Solid beige matches the illustration's background */
+    display: flex;
+    align-items: center;
+}
+
+.smarthome-hero-section .hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: -2%;
+    /* Shift container to the left */
+    width: 55%;
+    /* Illustration takes up the left 55% of the screen */
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 1%;
+    /* Reduce padding-left to pull image closer to the edge */
+}
+
+.smarthome-hero-section .hero-bg-img {
+    max-height: 85%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Horizontal linear gradient to fade light background to the right, and vertical linear gradient to fade to black at the bottom */
+.smarthome-hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(13, 13, 13, 0) 65%, #0d0d0d 100%);
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+.smarthome-hero-section .hero-content-overlay {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding-top: var(--header-height);
+}
+
+.smarthome-hero-section .section-container {
+    max-width: 1400px;
+    width: 100%;
+}
+
+.smarthome-hero-titles {
+    margin-left: auto;
+    margin-top: -4rem;
+    /* Shift text block upwards for visual layout balance */
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    max-width: 600px;
+}
+
+.smarthome-hero-tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    color: #B278E8;
+    /* Purple accent */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.smarthome-hero-subtagline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.0rem, 2vw, 1.4rem);
+    font-weight: 500;
+    color: #6c5e7b;
+    /* Gray-purple */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.smarthome-hero-main-title {
+    font-family: var(--font-hero-name);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-style: italic;
+    font-weight: 800;
+    background: linear-gradient(to bottom, #743FA7, #B278E8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for older browsers */
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.15));
+    text-transform: uppercase;
+}
+
+/* 2. Youtube Iframe responsive wrapper */
+.story-video-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border: 3px solid #000000;
+    overflow: hidden;
+}
+
+.story-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* 3. Tool Cards overrides */
+.project-tools-section .tool-card:hover {
+    border-color: #a259ff;
+    box-shadow: 0 10px 20px rgba(162, 89, 255, 0.15);
+}
+
+/* 4. Responsive Styles */
+@media (max-width: 992px) {
+    .smarthome-hero-section {
+        background-color: #D3D0C8;
+        /* Solid beige matching the illustration's background */
+        flex-direction: column;
+        /* Stack illustration and text vertically */
+        padding-top: calc(var(--header-height) + 1rem);
+        padding-bottom: 3rem;
+        height: auto;
+        min-height: auto;
+    }
+
+    .smarthome-hero-section .hero-bg-container {
+        position: relative;
+        left: 0;
+        /* Reset left shift on mobile */
+        width: 100%;
+        height: 250px;
+        /* Reduced from 300px to pull text up */
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .smarthome-hero-section .hero-bg-img {
+        max-height: 100%;
+    }
+
+    .smarthome-hero-section::after {
+        background: linear-gradient(to bottom, rgba(13, 13, 13, 0) 65%, #0d0d0d 100%);
+    }
+
+    .smarthome-hero-titles {
+        margin: -4.5rem auto 0 auto;
+        /* Pull the text block much closer to the illustration */
+        text-align: center;
+        align-items: center;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .smarthome-hero-section .hero-bg-container {
+        height: 180px;
+        /* Reduced from 200px to pull text up */
+    }
+
+    .smarthome-hero-titles {
+        margin: -3.5rem auto 0 auto;
+        /* Pull the text block closer on small mobile viewports */
+    }
+}
+
+/* 5. Storyboard Image Aspect Ratio Override */
+.storyboard-wrapper {
+    aspect-ratio: 409/557 !important;
+}

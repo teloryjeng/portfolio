@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -8,87 +8,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Alumni+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Antic+Didone&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Alumni+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Antic+Didone&display=swap"
+        rel="stylesheet">
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/transition.css">
     <script src="../script/transition.js" defer></script>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/djuanda.css">
+    <link rel="stylesheet" href="../css/project-overlay.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
-    <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - var(--header-height) - 100px);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-star-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(200px, 40vw, 400px);
-            height: clamp(200px, 40vw, 400px);
-            opacity: 0.05;
-            animation: spin 30s linear infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes spin {
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        .cs-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .cs-title {
-            font-family: var(--font-hero-name);
-            font-size: clamp(3.5rem, 8vw, 7.5rem);
-            font-weight: 900;
-            color: var(--text-white);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            filter: drop-shadow(4px 4px 0px #000000);
-            margin: 0 0 1.5rem 0;
-            transform: skewX(-12deg);
-        }
-
-        .cs-status-box {
-            background-color: var(--primary-color);
-            color: var(--text-white);
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 10px 30px;
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            transform: rotate(-3deg) skewX(-10deg);
-            margin-bottom: 3.5rem;
-            display: inline-block;
-        }
-
-        .cs-btn-back {
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -96,31 +28,145 @@
     <script src="../script/header.js"></script>
 
     <main>
-        <div class="coming-soon-container">
-            <!-- Custom P5 Star Icon -->
-            <svg class="cs-star-bg" viewBox="0 0 24 24">
-                <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#E52E2E" stroke="#000000" stroke-width="2"/>
-            </svg>
+        <!-- Project Hero Section -->
+        <section class="djuanda-hero-section">
+            <div class="hero-bg-container">
+                <img src="../assets/img/djuanda/juanda4.ai.jpg" alt="Biografi Ir. Djuanda Hero" class="hero-bg-img">
+            </div>
+            <div class="hero-content-overlay">
+                <div class="section-container">
+                    <div class="djuanda-hero-titles">
+                        <span class="djuanda-hero-tagline">Biografi</span>
+                        <h1 class="djuanda-hero-main-title">IR. DJUANDA</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <span class="cs-tagline">2D ANIMATION & BIOGRAPHY</span>
-            <h1 class="cs-title">Ir. Djuanda</h1>
-            <div class="cs-status-box">COMING SOON - STILL PROCESS ON EDIT</div>
-            
-            <a href="../project.html" class="btn-primary cs-btn-back">
-                BACK TO PROJECTS
-                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="btn-arrow">
-                    <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
-    </main>
+        <!-- Story / Explanation Section -->
+        <section class="project-story-section">
+            <div class="section-container">
+                <h2 class="story-heading">STORY OF THIS PROJECT</h2>
+
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/djuanda/image 13.jpg" alt="Adobe Illustrator Asset Creation"
+                                class="story-img">
+                        </div>
+                        <span class="row-number-badge">01</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Sebuah kanvas tidak selamanya berupa kertas datar atau layar monitor yang kaku. Ketika mata
+                            kuliah Workshop Audio Visual Media pada semester 3 mencapai puncaknya pada penilaian akhir,
+                            tantangan yang disodorkan benar-benar mendobrak batas kenyamanan: menciptakan sebuah animasi
+                            2D yang output akhirnya bukan sekadar video biasa, melainkan sebuah video mapping yang akan
+                            diproyeksikan langsung pada fasad megah sebuah bangunan. Ini adalah wilayah baru yang belum
+                            pernah dijamah sebelumnya-sebuah petualangan visual yang menuntut presisi tingkat tinggi.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/djuanda/field_test.jpg" alt="Video Mapping Field Test"
+                                class="story-img">
+                        </div>
+                        <span class="row-number-badge">02</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Menyelaraskan setiap piksel animasi dengan lekuk-lekuk arsitektur nyata terbukti bukan
+                            perkara mudah. Proses kreatif tidak hanya berdiam di depan meja komputer. Langkah awal harus
+                            dimulai dengan turun langsung ke lapangan, melakukan observasi mendalam untuk memetakan
+                            setiap detail, sudut, dan dimensi dari fasad bangunan tersebut. Data lapangan inilah yang
+                            kemudian dirajut menjadi template panduan agar setiap ilusi optik yang diciptakan nanti bisa
+                            menempel sempurna pada struktur dinding aslinya.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/djuanda/projection_test.jpg" alt="Final Projection on Wall"
+                                class="story-img">
+                        </div>
+                        <span class="row-number-badge">03</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Di tengah kejaran tenggat waktu semesteran yang terbilang sangat singkat, strategi
+                            pengerjaan pun harus disusun secara matang. Kuncinya terletak pada fase konseptual:
+                            pembuatan aset-aset desain harus diselesaikan secara presisi sejak awal. Dengan aset yang
+                            matang dan terstruktur, proses menganimasi dapat dipacu dengan lebih cepat dan efisien tanpa
+                            harus kehilangan kualitas estetika.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Story Conclusion -->
+                <div class="story-conclusion-container">
+                    <p class="story-conclusion">
+                        Proyek ini akhirnya menjadi sebuah pembuktian tentang bagaimana sebuah animasi tidak hanya hidup
+                        di dalam ruang digital, tetapi juga mampu berinteraksi, bernapas, dan mengubah persepsi sebuah
+                        bangunan fisik melalui keajaiban proyeksi cahaya.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tools Used Section -->
+        <section class="project-tools-section">
+            <div class="section-container">
+                <h2 class="tools-heading">TOOLS USED FOR THIS PROJECT</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_photoshop.png" alt="Adobe Photoshop" class="tool-logo">
+                        <span class="tool-name">PHOTOSHOP</span>
+                    </div>
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_illustrator.png" alt="Adobe Illustrator" class="tool-logo">
+                        <span class="tool-name">ILLUSTRATOR</span>
+                    </div>
+                    <div class="tool-card">
+                        <img src="../assets/logo/skill-icons_aftereffects.png" alt="Adobe After Effects"
+                            class="tool-logo">
+                        <span class="tool-name">AFTER EFFECTS</span>
+                    </div>
+                    <div class="tool-card">
+                        <img src="../assets/logo/image 16 [Vectorized].png" alt="Resolume Arena" class="tool-logo">
+                        <span class="tool-name">RESOLUME ARENA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Collaborate Section -->
+        <section id="collaborate" class="collaborate-section">
+            <div class="section-container">
+                <span class="collaborate-tagline">READY TO COLLABORATE</span>
+                <h2 class="collaborate-title">Mari kita bangun sesuatu yang luar biasa bersama</h2>
+                <p class="collaborate-subtitle">Terbuka untuk kesempatan magang, project freelance atau kolaborasi
+                    riset.</p>
+            </div>
+        </section>
+</main>
 
     <!-- Footer -->
     <script src="../script/footer.js"></script>
 
     <!-- JavaScript Interactions -->
     <script src="../script/script.js"></script>
+
+    <!-- Lightbox Overlay Script -->
+    <script src="../script/project-overlay.js"></script>
 </body>
 
 </html>
-

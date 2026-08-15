@@ -46,6 +46,21 @@
             align-items: center;
             text-align: center;
         }
+
+        .hero-tagline {
+            filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8)) !important;
+        }
+
+        @media (max-width: 992px) {
+            .hero-content-overlay {
+                align-items: flex-start !important;
+                padding-top: clamp(50px, 8vh, 90px) !important;
+            }
+
+            .hero-subtitle {
+                filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.8)) !important;
+            }
+        }
     </style>
 </head>
 

@@ -1,0 +1,144 @@
+/* Ir. Djuanda Project Detail Page Styles */
+@import "project-detail-shared.css";
+
+/* 1. Hero Section Styling */
+.djuanda-hero-section {
+    position: relative;
+    height: 75vh;
+    min-height: 550px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #4a260c;
+    /* Solid matches the brown background color of the hero illustration */
+    display: flex;
+    align-items: center;
+}
+
+.djuanda-hero-section .hero-bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 65%;
+    /* Image occupies the left 65% of the screen */
+    height: 100%;
+    z-index: 1;
+}
+
+.djuanda-hero-section .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left top;
+    /* Align the character to the left */
+    filter: brightness(0.85) contrast(1.02);
+    /* Seamless contrast and brightness match */
+}
+
+/* Horizontal linear gradient to fade image to solid brown on the right, and vertical gradient to black at bottom */
+.djuanda-hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Vertical fade is placed first (on top) so it fades the solid brown background as well */
+    background: linear-gradient(to bottom, rgba(13, 13, 13, 0) 65%, #0d0d0d 100%),
+        linear-gradient(to right, rgba(74, 38, 12, 0) 40%, #4a260c 62%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.djuanda-hero-section .hero-content-overlay {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding-top: var(--header-height);
+}
+
+.djuanda-hero-section .section-container {
+    max-width: 1400px;
+    /* Wider container to shift text further to the right on wide screens */
+    width: 100%;
+}
+
+.djuanda-hero-titles {
+    margin-left: auto;
+    /* Right alignment of container, but text inside is centered */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 600px;
+}
+
+.djuanda-hero-tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 500;
+    color: var(--text-white);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.djuanda-hero-main-title {
+    font-family: var(--font-hero-name);
+    font-size: clamp(3rem, 6.8vw, 6rem);
+    font-style: italic;
+    font-weight: 800;
+    color: var(--text-white);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.85));
+}
+
+/* 2. Story Section Customizations */
+.story-conclusion-container {
+    max-width: 900px;
+    margin: 4rem auto 2rem auto;
+    text-align: center;
+    padding: 0 1.5rem;
+}
+
+.story-conclusion {
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    color: var(--text-white);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* 4. Responsive Styles */
+@media (max-width: 992px) {
+    .djuanda-hero-section {
+        height: 60vh;
+        min-height: 480px;
+    }
+
+    .djuanda-hero-section .hero-bg-container {
+        width: 100%;
+        /* Spans full width on mobile devices */
+    }
+
+    .djuanda-hero-section .hero-bg-img {
+        object-position: center center;
+        /* Center the image on mobile */
+        filter: brightness(0.5) contrast(1.0);
+        /* Darker filter to improve text contrast */
+    }
+
+    .djuanda-hero-section::after {
+        background: radial-gradient(circle at 50% 50%, rgba(74, 38, 12, 0.1) 0%, rgba(74, 38, 12, 0.7) 60%, #4a260c 100%),
+            linear-gradient(to bottom, rgba(13, 13, 13, 0) 60%, #0d0d0d 100%);
+    }
+
+    .djuanda-hero-titles {
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+}

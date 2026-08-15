@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -16,83 +16,11 @@
     <link rel="stylesheet" href="../css/transition.css">
     <script src="../script/transition.js" defer></script>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/reog.css">
+    <link rel="stylesheet" href="../css/project-overlay.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
-    <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - var(--header-height) - 100px);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-star-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(200px, 40vw, 400px);
-            height: clamp(200px, 40vw, 400px);
-            opacity: 0.05;
-            animation: spin 30s linear infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes spin {
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        .cs-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .cs-title {
-            font-family: var(--font-hero-name);
-            font-size: clamp(3.5rem, 8vw, 7.5rem);
-            font-weight: 900;
-            color: var(--text-white);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            filter: drop-shadow(4px 4px 0px #000000);
-            margin: 0 0 1.5rem 0;
-            transform: skewX(-12deg);
-        }
-
-        .cs-status-box {
-            background-color: var(--primary-color);
-            color: var(--text-white);
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 10px 30px;
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            transform: rotate(-3deg) skewX(-10deg);
-            margin-bottom: 3.5rem;
-            display: inline-block;
-        }
-
-        .cs-btn-back {
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -100,26 +28,168 @@
     <script src="../script/header.js"></script>
 
     <main>
-        <div class="coming-soon-container">
-            <!-- Custom P5 Star Icon -->
-            <svg class="cs-star-bg" viewBox="0 0 24 24">
-                <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#E52E2E" stroke="#000000"
-                    stroke-width="2" />
-            </svg>
+        <!-- Project Hero Section -->
+        <section class="project-detail-hero">
+            <div class="hero-bg-container">
+                <img src="../assets/img/reog/image-46-1165111432.webp" alt="Asal Usul Reog Ponorogo Hero"
+                    class="hero-bg-img">
+            </div>
+            <div class="hero-content-overlay">
+                <div class="section-container">
+                    <div class="reog-hero-titles">
+                        <span class="reog-hero-tagline">ASAL USUL</span>
+                        <h1 class="reog-hero-main-title">REOG PONOROGO</h1>
+                        <p class="reog-hero-subtitle">Visual Novel Game</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <span class="cs-tagline">VISUAL NOVEL GAME</span>
-            <h1 class="cs-title">Asal Usul Reog Ponorogo</h1>
-            <div class="cs-status-box">COMING SOON - STILL PROCESS ON EDIT</div>
+        <!-- Project Story Section -->
+        <section class="project-story-section">
+            <div class="section-container">
+                <h2 class="story-heading">STORY OF THIS PROJECT</h2>
 
-            <a href="../project.html" class="btn-primary cs-btn-back">
-                BACK TO PROJECTS
-                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="btn-arrow">
-                    <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper reog-storyboard-wrapper">
+                            <img src="../assets/img/reog/storyboard.jpg" alt="Storyboard and Notion Workspace"
+                                class="story-img">
+                        </div>
+                        <span class="row-number-badge">01</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Gagasan terbaik sering kali lahir dari kedekatan emosional dan latar belakang budaya yang
+                            nyata. Ketika momen penilaian akhir mata kuliah Workshop Storytelling Interaktif di semester
+                            2 tiba, sebuah ide spontan muncul berkat salah satu anggota kelompok yang berdomisili di
+                            Ponorogo. Dari obrolan itulah, sebuah keputusan bulat diambil untuk mengangkat kekayaan
+                            budaya lokal ke dalam medium modern melalui sebuah game visual novel interaktif berjudul
+                            "Asal Usul Reog Ponorogo".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/reog/vn_scene.jpg" alt="Dialogue Scene" class="story-img">
+                        </div>
+                        <span class="row-number-badge">02</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Alur cerita game ini membawa pemain menyelami kisah legendaris Prabu Sewandono, sang
+                            penguasa Kerajaan Bantarangin yang terpikat oleh kecantikan jelita sang putri dari Kerajaan
+                            Kediri. Namun, cinta tidak datang begitu saja; sang Prabu harus berjuang memenuhi sederet
+                            syarat berat yang diajukan oleh Sang Dewi demi bisa meminang pujaan hatinya. Proses
+                            perancangan pun berjalan intens, dimulai dari merangkay premis yang kuat, memahat desain
+                            karakter yang representatif, hingga menyusun Story Flow Diagram (SFD) yang rumit untuk
+                            mengatur setiap percabangan cerita yang akan dipilih oleh pemain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Image Left, Text Right (With Aspect Ratio Override) -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper">
+                            <img src="../assets/img/reog/forest_scene.jpg" alt="Forest Dialogue Scene"
+                                class="story-img">
+                        </div>
+                        <span class="row-number-badge">03</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Di dalam proyek ini, tanggung jawab besar diletakkan pada peran sebagai programmer yang
+                            bertugas menyusun dan menghidupkan naskah cerita ke dalam sistem. Langkah ini menjadi sebuah
+                            lompatan teknis yang menantang, karena menjadi momen pertama kalinya untuk mempelajari
+                            bahasa pemrograman Ren'Py, sebuah engine khusus visual novel yang merupakan turunan dari
+                            bahasa Python.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Result / Download Section -->
+                <div class="download-section-wrapper">
+                    <h3 class="download-title">RESULT OF THIS PROJECT</h3>
+                    <div class="reog-download-group">
+                        <!-- Button 1: Try on Itch.io -->
+                        <a href="https://teloryjeng.itch.io/asal-usul-reog-ponorogo" class="btn-download btn-itch"
+                            target="_blank">
+                            <img src="../assets/logo/fa6-brands_itch-io.png" alt="Itch.io Logo" class="btn-icon">
+                            Try on itch.io
+                        </a>
+
+                        <!-- Button 2: MediaFire -->
+                        <a href="https://sfl.gl/ZFeT17O" class="btn-download btn-mediafire" target="_blank">
+                            <svg class="btn-icon-svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z" />
+                            </svg>
+                            Download Game
+                        </a>
+
+                        <!-- Button 3: GitHub Projects -->
+                        <a href="https://github.com/teloryjeng/Asal-Usul-Reog-Ponorog.git"
+                            class="btn-download btn-github-p5" target="_blank">
+                            <svg class="btn-icon-svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                            </svg>
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tools Used Section -->
+        <section class="project-tools-section">
+            <div class="section-container">
+                <h2 class="tools-heading">TOOLS USED FOR THIS PROJECT</h2>
+                <div class="tools-grid">
+                    <!-- Notion -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/ri_notion-fill.png" alt="Notion" class="tool-logo">
+                        <span class="tool-name">NOTION</span>
+                    </div>
+                    <!-- Photoshop -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_photoshop.png" alt="Adobe Photoshop" class="tool-logo">
+                        <span class="tool-name">PHOTOSHOP</span>
+                    </div>
+                    <!-- Illustrator -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_illustrator.png" alt="Adobe Illustrator" class="tool-logo">
+                        <span class="tool-name">ILLUSTRATOR</span>
+                    </div>
+                    <!-- VS Code -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_vscode.png" alt="Visual Studio Code" class="tool-logo">
+                        <span class="tool-name">VISUAL STUDIO CODE</span>
+                    </div>
+                    <!-- Ren'Py -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_renpy.png" alt="Ren'Py Engine" class="tool-logo">
+                        <span class="tool-name">REN'PY</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborate Section -->
+        <section id="collaborate" class="collaborate-section">
+            <div class="section-container">
+                <span class="collaborate-tagline">READY TO COLLABORATE</span>
+                <h2 class="collaborate-title">Mari kita bangun sesuatu yang luar biasa bersama</h2>
+                <p class="collaborate-subtitle">Terbuka untuk kesempatan magang, project freelance atau kolaborasi
+                    riset.</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -127,6 +197,9 @@
 
     <!-- JavaScript Interactions -->
     <script src="../script/script.js"></script>
+
+    <!-- Lightbox Script -->
+    <script src="../script/project-overlay.js"></script>
 </body>
 
 </html>

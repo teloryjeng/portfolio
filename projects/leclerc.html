@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -16,83 +16,11 @@
     <link rel="stylesheet" href="../css/transition.css">
     <script src="../script/transition.js" defer></script>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/leclerc.css">
+    <link rel="stylesheet" href="../css/project-overlay.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
-    <style>
-        .coming-soon-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - var(--header-height) - 100px);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cs-star-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: clamp(200px, 40vw, 400px);
-            height: clamp(200px, 40vw, 400px);
-            opacity: 0.05;
-            animation: spin 30s linear infinite;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        @keyframes spin {
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        .cs-tagline {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .cs-title {
-            font-family: var(--font-hero-name);
-            font-size: clamp(3.5rem, 8vw, 7.5rem);
-            font-weight: 900;
-            color: var(--text-white);
-            text-transform: uppercase;
-            line-height: 1;
-            letter-spacing: -0.02em;
-            filter: drop-shadow(4px 4px 0px #000000);
-            margin: 0 0 1.5rem 0;
-            transform: skewX(-12deg);
-        }
-
-        .cs-status-box {
-            background-color: var(--primary-color);
-            color: var(--text-white);
-            font-family: var(--font-heading);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            font-weight: 800;
-            text-transform: uppercase;
-            padding: 10px 30px;
-            border: 4px solid #000000;
-            box-shadow: 8px 8px 0px #000000;
-            transform: rotate(-3deg) skewX(-10deg);
-            margin-bottom: 3.5rem;
-            display: inline-block;
-        }
-
-        .cs-btn-back {
-            margin-top: 1rem;
-        }
-    </style>
 </head>
 
 <body>
@@ -100,33 +28,107 @@
     <script src="../script/header.js"></script>
 
     <main>
-        <div class="coming-soon-container">
-            <!-- Custom P5 Star Icon -->
-            <svg class="cs-star-bg" viewBox="0 0 24 24">
-                <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#E52E2E" stroke="#000000"
-                    stroke-width="2" />
-            </svg>
+        <!-- Project Hero Section -->
+        <section class="project-detail-hero">
+            <div class="hero-bg-container">
+                <img src="../assets/img/leclerc/image 21.jpg" alt="Leclerc Graphic Hero" class="hero-bg-img leclerc-hero-bg-img">
+            </div>
+            <div class="hero-content-overlay">
+                <div class="section-container">
+                    <div class="leclerc-hero-titles">
+                        <span class="leclerc-hero-tagline">DESAIN POSTER</span>
+                        <h1 class="leclerc-hero-main-title">Leclerc</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <span class="cs-tagline">POSTER DESIGN</span>
-            <h1 class="cs-title">Charles Leclerc</h1>
-            <div class="cs-status-box">COMING SOON - STILL PROCESS ON EDIT</div>
+        <!-- Project Story Section -->
+        <section class="project-story-section">
+            <div class="section-container">
+                <h2 class="story-heading">STORY OF THIS PROJECT</h2>
 
-            <a href="../project.html" class="btn-primary cs-btn-back">
-                BACK TO PROJECTS
-                <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    class="btn-arrow">
-                    <path d="M2 2L6 6L2 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </a>
-        </div>
-    </main>
+                <!-- Row 1: Image Left, Text Right -->
+                <div class="story-row">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper leclerc-porsche-wrapper">
+                            <img src="../assets/img/leclerc/image 20.jpg" alt="Porsche Poster Layout Inspiration" class="story-img">
+                        </div>
+                        <span class="row-number-badge">01</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Sebuah karya desain yang memikat sering kali lahir ketika tugas akademis bertemu dengan passion pribadi yang mendalam. Momen itu hadir di semester dua, saat dosen mata kuliah Workshop Desain Kreatif memberikan tantangan untuk menciptakan sebuah media cetak yang wajib menerapkan elemen dan konsep desain yang telah ditentukan. Sebagai seorang pencinta dunia otomotif, khususnya deru mesin jet darat Formula 1, pencarian inspirasi pun dimulai dengan menjelajahi jagat Pinterest. Di sanalah mata terpaku pada sebuah desain poster ikonik Porsche, yang tata letak serta komposisinya langsung memantik ide segar untuk diadaptasi dan dikembangkan lebih jauh.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 2: Text Left, Image Right -->
+                <div class="story-row reverse">
+                    <div class="story-image-col">
+                        <div class="story-image-wrapper leclerc-ferrari-wrapper">
+                            <img src="../assets/img/leclerc/image 21.jpg" alt="Charles Leclerc Ferrari Poster" class="story-img">
+                        </div>
+                        <span class="row-number-badge">02</span>
+                    </div>
+                    <div class="story-text-col">
+                        <p class="story-paragraph">
+                            Dengan memanfaatkan struktur layout tersebut, elemen-elemen visual mulai disusun dengan matang. Pilihan jatuh pada sosok pembalap F1 berkebangsaan Monako dari tim Scuderia Ferrari yang identik dengan nomor balap 16: Charles Leclerc. Menjadi bagian dari tim kuda jingkrak sejak tahun 2019, Leclerc bukan hanya sekadar subjek foto, melainkan jangkar visual yang sempurna untuk poster ini.
+                        </p>
+                        <p class="story-paragraph">
+                            Komposisi dirancang untuk menampilkan berbagai sudut pandang dinamis dari sang pembalap; mulai dari potret wajahnya yang penuh fokus, detail grafis pada helm pelindungnya, hingga siluet sangar mobil balap Ferrari yang membelah lintasan. Tidak hanya bermain di ranah estetika visual, poster ini juga diberi "nyawa" dan kedalaman cerita dengan menyematkan sebuah pertanyaan spekulatif yang selalu mendebarkan bagi para penggemar balap: seberapa besar peluang Ferrari untuk kembali merebut gelar juara dunia?
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Story Conclusion -->
+                <div class="story-conclusion-container">
+                    <p class="story-conclusion">
+                        Melalui proyek ini, lembar tugas kuliah berhasil diubah menjadi sebuah media cetak yang bertenaga. Karya ini menjadi pembuktian bahwa penerapan teori desain yang kaku sekalipun bisa terasa sangat hidup dan emosional ketika dipadukan dengan minat yang mendalam terhadap dunia motorsport.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tools Used Section -->
+        <section class="project-tools-section">
+            <div class="section-container">
+                <h2 class="tools-heading">TOOLS USED FOR THIS PROJECT</h2>
+                <div class="tools-grid">
+                    <!-- Pinterest -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/logos_pinterest.png" alt="Pinterest" class="tool-logo">
+                        <span class="tool-name">PINTEREST</span>
+                    </div>
+                    <!-- Photoshop -->
+                    <div class="tool-card">
+                        <img src="../assets/logo/devicon_photoshop.png" alt="Adobe Photoshop" class="tool-logo">
+                        <span class="tool-name">PHOTOSHOP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Collaborate Section -->
+        <section id="collaborate" class="collaborate-section">
+            <div class="section-container">
+                <span class="collaborate-tagline">READY TO COLLABORATE</span>
+                <h2 class="collaborate-title">Mari kita bangun sesuatu yang luar biasa bersama</h2>
+                <p class="collaborate-subtitle">Terbuka untuk kesempatan magang, project freelance atau kolaborasi
+                    riset.</p>
+            </div>
+        </section>
+</main>
 
     <!-- Footer -->
     <script src="../script/footer.js"></script>
 
     <!-- JavaScript Interactions -->
     <script src="../script/script.js"></script>
+
+    <!-- Lightbox Script -->
+    <script src="../script/project-overlay.js"></script>
 </body>
 
 </html>

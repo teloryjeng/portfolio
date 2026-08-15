@@ -249,7 +249,7 @@
 }
 
 .project-overlay-title {
-    font-family: var(--font-project-title);
+    font-family: 'Persona 5', sans-serif;
     font-weight: 700;
     color: var(--text-white);
     transform: scale(0.85);
@@ -274,6 +274,7 @@
 
 /* Text Overlays Sizing & Theme Colors */
 .title-virtucare {
+    font-family: var(--font-project-title);
     font-size: clamp(1.8rem, 4.5vw, 3rem);
     color: #018CF8;
     filter: drop-shadow(-2px 7px 1px rgba(0, 0, 0, 0.31));
