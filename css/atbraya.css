@@ -24,8 +24,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 68%;
-    filter: brightness(0.45) contrast(1.1);
+    object-position: center 75%;
+
     /* Linear gradient mask to fade the bottom of the hero into body */
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 65%, rgba(0, 0, 0, 0) 100%);
@@ -41,6 +41,12 @@
     display: flex;
     align-items: center;
     padding-top: var(--header-height);
+}
+
+.hero-content-overlay .section-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .hero-titles {
@@ -180,10 +186,12 @@
     background-color: var(--primary-color);
     color: var(--text-white);
     font-family: var(--font-hero-name);
-    font-size: 0.95rem; /* Compact size */
+    font-size: 0.95rem;
+    /* Compact size */
     font-weight: 800;
     font-style: italic;
-    padding: 5px 12px; /* Compact padding */
+    padding: 5px 12px;
+    /* Compact padding */
     border: 2px solid #000000;
     box-shadow: 3px 3px 0px #000000;
     text-transform: uppercase;
@@ -212,7 +220,8 @@
 }
 
 .coming-soon-overlay .p5-btn-space {
-    width: 0.25em; /* Compact space */
+    width: 0.25em;
+    /* Compact space */
     display: inline-block;
 }
 
@@ -225,15 +234,19 @@
 .download-action-wrapper:hover .coming-soon-overlay {
     background-color: #0d0d0d !important;
     box-shadow: 4px 4px 0px var(--primary-color) !important;
-    transform: translate(-50%, -60%) rotate(-7deg) scale(1.04) skewX(-10deg) !important; /* Slightly smaller scale */
+    transform: translate(-50%, -60%) rotate(-7deg) scale(1.04) skewX(-10deg) !important;
+    /* Slightly smaller scale */
 }
 
 /* Hover state: convert to stop-motion collage letters (compact layout for long text) */
 .download-action-wrapper:hover .coming-soon-overlay .p5-btn-letter {
-    padding: 2px 4px; /* Compact padding per letter */
-    margin: 0 0.5px; /* Compact margin */
+    padding: 2px 4px;
+    /* Compact padding per letter */
+    margin: 0 0.5px;
+    /* Compact margin */
     font-family: 'Persona 5';
-    font-size: 0.78rem; /* Compact font size */
+    font-size: 0.78rem;
+    /* Compact font size */
     font-weight: 900;
     font-style: italic;
     background-color: var(--bg);

@@ -52,6 +52,17 @@
     object-fit: contain;
 }
 
+img.lightbox-content {
+    cursor: zoom-in;
+    pointer-events: auto !important;
+    transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+img.lightbox-content.zoomed {
+    transform: scale(2.2);
+    cursor: zoom-out;
+}
+
 .lightbox-image-overlay {
     position: absolute;
     top: 0;

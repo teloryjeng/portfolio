@@ -278,6 +278,20 @@
     margin-top: 0.3rem;
 }
 
+/* Husk Specific Sizing */
+.title-husk {
+    font-size: 4.8rem;
+    font-family: 'Nativera', sans-serif;
+    font-weight: 700;
+    filter: drop-shadow(-2px 7px 1px rgba(0, 0, 0, 0.31));
+}
+
+.desc-husk {
+    margin-top: -2%;
+    font-size: clamp(1rem, 1vw, 1rem);
+    font-weight: 700;
+}
+
 .project-card:hover .project-text-overlay {
     opacity: 1;
 }
@@ -336,6 +350,10 @@
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .title-husk {
+        font-size: clamp(3rem, 14vw, 4.2rem);
     }
 }
 

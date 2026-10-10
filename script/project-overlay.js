@@ -204,6 +204,80 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbTrack = lightbox.querySelector('.lightbox-thumbnails-track');
     const thumbContainer = lightbox.querySelector('.lightbox-thumbnails-container');
 
+    // Image Zoom Feature (Pan on hover/drag)
+    function toggleZoom(e) {
+        if (!lightboxImg || lightboxImg.style.display === 'none') return;
+        
+        const wrapper = lightboxImg.closest('.lightbox-wrapper');
+        if (!wrapper) return;
+
+        if (lightboxImg.classList.contains('zoomed')) {
+            resetZoom();
+        } else {
+            lightboxImg.classList.add('zoomed');
+            
+            const handleMove = (clientX, clientY) => {
+                const rect = wrapper.getBoundingClientRect();
+                const x = ((clientX - rect.left) / rect.width) * 100;
+                const y = ((clientY - rect.top) / rect.height) * 100;
+                lightboxImg.style.transformOrigin = `${x}% ${y}%`;
+            };
+            
+            const handleMouseMove = (event) => {
+                handleMove(event.clientX, event.clientY);
+            };
+
+            const handleTouchMove = (event) => {
+                if (event.touches.length > 0) {
+                    event.preventDefault();
+                    handleMove(event.touches[0].clientX, event.touches[0].clientY);
+                }
+            };
+            
+            let initX = e.clientX;
+            let initY = e.clientY;
+            if (e.changedTouches && e.changedTouches.length > 0) {
+                initX = e.changedTouches[0].clientX;
+                initY = e.changedTouches[0].clientY;
+            } else if (e.touches && e.touches.length > 0) {
+                initX = e.touches[0].clientX;
+                initY = e.touches[0].clientY;
+            }
+            
+            if (initX !== undefined && initY !== undefined) {
+                handleMove(initX, initY);
+            } else {
+                lightboxImg.style.transformOrigin = 'center center';
+            }
+
+            lightboxImg.addEventListener('mousemove', handleMouseMove);
+            lightboxImg.addEventListener('touchmove', handleTouchMove, { passive: false });
+            
+            lightboxImg._zoomMoveHandler = handleMouseMove;
+            lightboxImg._touchMoveHandler = handleTouchMove;
+        }
+    }
+
+    function resetZoom() {
+        if (lightboxImg && lightboxImg.classList.contains('zoomed')) {
+            lightboxImg.classList.remove('zoomed');
+            if (lightboxImg._zoomMoveHandler) {
+                lightboxImg.removeEventListener('mousemove', lightboxImg._zoomMoveHandler);
+                lightboxImg.removeEventListener('touchmove', lightboxImg._touchMoveHandler, { passive: false });
+                lightboxImg._zoomMoveHandler = null;
+                lightboxImg._touchMoveHandler = null;
+            }
+            lightboxImg.style.transformOrigin = '';
+        }
+    }
+
+    if (lightboxImg) {
+        lightboxImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleZoom(e);
+        });
+    }
+
     // Expose select function globally for inline onclick handlers (100% reliable click capture)
     window.p5SelectThumbnail = (index) => {
         try {
@@ -243,6 +317,8 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             if (index < 0 || index >= currentMediaList.length) return false;
             if (index === currentActiveIndex) return false; // Skip if clicking the same photo
+            
+            resetZoom();
             currentActiveIndex = index;
 
             const mediaItem = currentMediaList[index];
@@ -536,6 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Close functions
     const closeLightbox = () => {
+        resetZoom();
         lightbox.classList.remove('active');
         playSfx("deck_ui_switch_toggle_off.dat", true);
         document.body.classList.remove('p5-transition-active');
