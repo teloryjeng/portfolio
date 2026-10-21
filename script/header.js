@@ -1,13 +1,13 @@
 // Header Navigation Component
 (function () {
-    const currentPath = window.location.pathname;
-    const isAboutPage = currentPath.includes("about.html");
-    const isProjectPage = currentPath.includes("project.html") || currentPath.includes("/projects/");
-    const isPhotographyPage = currentPath.includes("photography.html") || currentPath.includes("/photography/");
+    const currentPath = window.location.pathname.replace(/\/$/, "");
+    const isAboutPage = currentPath.endsWith("/about") || currentPath.endsWith("/about.html");
+    const isProjectPage = currentPath.endsWith("/project") || currentPath.endsWith("/project.html") || currentPath.includes("/projects");
+    const isPhotographyPage = currentPath.endsWith("/visual-stories") || currentPath.endsWith("/visual-stories.html") || currentPath.includes("/photography");
     const isSubfolder = currentPath.includes("/projects/") || currentPath.includes("/photography/");
     const prefix = isSubfolder ? "../" : "./";
 
-    // Helper to generate P5 collage letters for the "LET'S WORK TOGETHER" button
+    // Helper to generate P5 collage letters for the "HIRE  ME" button
     function generateCollageText(text) {
         const colors = [
             { bg: '#E52E2E', text: '#FFFFFF' }, // Red bg, White text
@@ -17,14 +17,13 @@
 
         return text.split('').map((char, idx) => {
             if (char === ' ') {
-                return `<span class="p5-btn-space"></span>`;
+                return '<span class="p5-btn-space"></span>';
             }
 
-            // Alternating colors
             const combo = colors[idx % colors.length];
-            const rot = (Math.random() * 12 - 6).toFixed(1); // -6deg to 6deg
-            const scale = (Math.random() * 0.15 + 0.95).toFixed(2); // 0.95 to 1.10
-            const translateY = (Math.random() * 4 - 2).toFixed(1); // -2px to 2px
+            const rot = (Math.sin(idx * 3.5) * 6).toFixed(1);
+            const scale = (0.95 + ((idx * 7) % 15) / 100).toFixed(2);
+            const translateY = (((idx * 3) % 5) - 2).toFixed(1);
 
             return `<span class="p5-btn-letter" style="--rot:${rot}deg; --s:${scale}; --ty:${translateY}px; --bg:${combo.bg}; --fg:${combo.text}">${char}</span>`;
         }).join('');
@@ -68,19 +67,119 @@
             <nav class="nav-pill">
                 <a href="${prefix}about.html" class="nav-link ${isAboutPage ? 'active' : ''}">ABOUT ME</a>
                 <a href="${prefix}project.html" class="nav-link ${isProjectPage ? 'active' : ''}">MY PROJECT</a>
-                <a href="${prefix}photography.html" class="nav-link ${isPhotographyPage ? 'active' : ''}">PHOTOGRAPHY SIDE</a>
+                <a href="${prefix}visual-stories.html" class="nav-link ${isPhotographyPage ? 'active' : ''}">VISUAL STORIES</a>
             </nav>
             <div class="header-action-container">
-                <a href="mailto:muhsururiardan@gmail.com" class="p5-nav-btn" aria-label="Mail Me">
+                <button type="button" class="p5-nav-btn" aria-expanded="false" aria-label="Contact Options">
                     <span class="btn-text">${buttonContentHtml}</span>
                     <span class="btn-icon">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
                         </svg>
                     </span>
-                </a>
+                </button>
+
+                <!-- Contact Popover Dropdown -->
+                <div class="p5-contact-popover" role="menu">
+                    <div class="p5-popover-header">
+                        <div class="p5-popover-banner">
+                            <span class="p5-banner-star">★</span>
+                            <span class="p5-banner-text">COMMUNICATION</span>
+                        </div>
+                    </div>
+
+                    <div class="p5-contact-options">
+                        <!-- Option 1: WhatsApp -->
+                        <a href="https://wa.link/lz1ber" target="_blank" rel="noopener noreferrer" class="p5-contact-item p5-item-wa">
+                            <div class="p5-item-accent"></div>
+                            <div class="p5-item-icon-box">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.188 8.188 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.181 8.181 0 0 1 2.41 5.83c.01 4.54-3.69 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.2 3.7.59.25 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.11-.23-.17-.48-.29z"/>
+                                </svg>
+                            </div>
+                            <div class="p5-item-content">
+                                <span class="p5-item-title">WHATSAPP</span>
+                                <span class="p5-item-desc">FAST CHAT &amp; DISCUSSION</span>
+                            </div>
+                            <span class="p5-item-arrow">▶</span>
+                        </a>
+
+                        <!-- Option 2: Email -->
+                        <a href="mailto:muhsururiardan@gmail.com" class="p5-contact-item p5-item-email">
+                            <div class="p5-item-accent"></div>
+                            <div class="p5-item-icon-box">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="p5-item-content">
+                                <span class="p5-item-title">EMAIL</span>
+                                <span class="p5-item-desc">FORMAL PROPOSAL &amp; OFFER</span>
+                            </div>
+                            <span class="p5-item-arrow">▶</span>
+                        </a>
+                    </div>
+
+                    <div class="p5-popover-footer">
+                        <span class="p5-footer-hint">[ESC] CLOSE</span>
+                    </div>
+                </div>
             </div>
         </header>
     `);
+
+    // Interactive Dropdown Logic
+    function initContactDropdown() {
+        const btn = document.querySelector('.header-action-container .p5-nav-btn');
+        const popover = document.querySelector('.p5-contact-popover');
+        const container = document.querySelector('.header-action-container');
+
+        if (!btn || !popover) return;
+
+        function toggleDropdown(show) {
+            const isOpen = typeof show === 'boolean' ? show : !popover.classList.contains('show');
+            if (isOpen) {
+                popover.classList.add('show');
+                btn.classList.add('active');
+                btn.setAttribute('aria-expanded', 'true');
+            } else {
+                popover.classList.remove('show');
+                btn.classList.remove('active');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+
+        // Close on option click
+        popover.querySelectorAll('.p5-contact-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                toggleDropdown(false);
+            });
+        });
+
+        // Close on click outside
+        document.addEventListener('click', function (e) {
+            if (container && !container.contains(e.target)) {
+                toggleDropdown(false);
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                toggleDropdown(false);
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initContactDropdown);
+    } else {
+        initContactDropdown();
+    }
 })();

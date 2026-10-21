@@ -1,0 +1,32 @@
+@import "project-detail-shared.css";
+
+.focus-pause-hero .hero-bg-img {
+    object-position: center 58%;
+}
+
+.focus-pause-hero .hero-content-overlay {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.12) 75%);
+}
+
+.focus-pause-hero .hero-main-title {
+    font-style: normal;
+    font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.focus-pause-video-container {
+    max-width: 960px;
+}
+
+.focus-pause-watch-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--text-white);
+    font-family: var(--font-serif);
+    text-align: center;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 0.25em;
+}
+
+.focus-pause-watch-link:hover {
+    color: var(--primary-color);
+}

@@ -4,6 +4,7 @@
 .hero-first-name,
 .hero-last-name {
     font-family: 'Persona 5 Menu', sans-serif;
+    font-weight: 20;
 }
 
 .project-hero-section {
@@ -91,6 +92,14 @@
     font-weight: 100;
     opacity: 0.9;
     letter-spacing: -0.01em;
+}
+
+.photography-quote-section {
+    padding: 1.5rem 0;
+}
+
+.photography-quote-section .project-quote {
+    margin: 1rem auto 7rem;
 }
 
 /* Grid Layout for 12 projects */
@@ -193,6 +202,25 @@
     max-height: 60%;
 }
 
+.project-logo.logo-if26 {
+    max-width: 65%;
+    max-height: 48%;
+}
+
+.if26-logo-overlay {
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.if26-project-label {
+    color: #DCBBE0;
+    font-family: 'Upheaval TT', sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    letter-spacing: 0.08em;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
 .project-logo.logo-reog {
     max-width: 100%;
     max-height: 100%;
@@ -211,6 +239,21 @@
 .project-logo.logo-trmenung {
     max-width: 25%;
     max-height: 25%;
+}
+
+.project-logo.logo-grandopeningmentoring {
+    max-width: 75%;
+    max-height: 75%;
+}
+
+.grandopeningmentoring-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 1%, transparent 100%);
+}
+
+.grandopeningmentoring-overlay .project-overlay-desc {
+    color: var(--primary-color);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
 }
 
 .project-card:hover .project-logo-overlay {
@@ -256,11 +299,43 @@
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.title-rute-pahlawan {
+    font-family: 'Sprintura', sans-serif;
+    font-size: clamp(1.8rem, 3.7vw, 3rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    color: #ff7858;
+    text-shadow: 2px 3px 0 #31130f;
+}
+
+.overlay-rute-pahlawan .project-overlay-desc {
+    margin-top: 0.65rem;
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
 .project-overlay-desc {
     font-family: var(--font-project-title);
     color: rgba(255, 255, 255, 0.8);
     transform: scale(0.85);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.title-focus-pause {
+    font-size: clamp(1.6rem, 3.2vw, 2.8rem);
+    line-height: 1.1;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.9);
+}
+
+.desc-focus-pause {
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+    letter-spacing: 0.08em;
+    text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .project-card:hover .project-text-overlay {
@@ -269,6 +344,10 @@
 
 .project-card:hover .project-overlay-title,
 .project-card:hover .project-overlay-desc {
+    transform: scale(1);
+}
+
+.project-card:hover .logo-grandopeningmentoring {
     transform: scale(1);
 }
 

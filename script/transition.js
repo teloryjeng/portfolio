@@ -191,11 +191,14 @@
                 const targetUrl = new URL(anchor.href, window.location.origin);
                 const currentUrl = new URL(window.location.href);
 
-                // Helper to normalize pathnames (e.g. treat / and /index.html as the same)
+                // Helper to normalize pathnames (e.g. treat /, /index, and /index.html as the same, and strip .html)
                 const getNormalizedPath = (url) => {
-                    let pathname = url.pathname;
+                    let pathname = url.pathname.replace(/\.html$/, '');
                     if (pathname.endsWith('/')) {
-                        pathname += 'index.html';
+                        pathname = pathname.slice(0, -1);
+                    }
+                    if (pathname === '' || pathname === '/index') {
+                        pathname = '/';
                     }
                     return pathname;
                 };

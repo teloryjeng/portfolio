@@ -63,6 +63,22 @@ img.lightbox-content.zoomed {
     cursor: zoom-out;
 }
 
+model-viewer.lightbox-3d-content {
+    width: clamp(300px, 75vw, 850px);
+    height: clamp(350px, 58vh, 550px);
+    max-width: 90vw;
+    max-height: 62vh;
+    outline: none;
+    background-color: #000000;
+    --poster-color: transparent;
+    cursor: grab;
+    pointer-events: auto !important;
+}
+
+model-viewer.lightbox-3d-content:active {
+    cursor: grabbing;
+}
+
 .lightbox-image-overlay {
     position: absolute;
     top: 0;

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" width="100" height="80" fill="none">
+    <defs>
+        <linearGradient id="hlVisor" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00A4EF" stop-opacity="0.9" />
+            <stop offset="50%" stop-color="#0078D4" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#2D7D9A" stop-opacity="0.85" />
+        </linearGradient>
+        <linearGradient id="hlVisorReflection" x1="0%" y1="0%" x2="100%" y2="50%">
+            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.6" />
+            <stop offset="35%" stop-color="#00E5FF" stop-opacity="0.3" />
+            <stop offset="100%" stop-color="#0078D4" stop-opacity="0" />
+        </linearGradient>
+        <linearGradient id="hlFrame" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#2A2D34" />
+            <stop offset="50%" stop-color="#3F444E" />
+            <stop offset="100%" stop-color="#1E2024" />
+        </linearGradient>
+    </defs>
+
+    <!-- Headband Halo / Rear Strap -->
+    <ellipse cx="50" cy="38" rx="43" ry="17" stroke="url(#hlFrame)" stroke-width="5" stroke-linecap="round" fill="none" />
+    <path d="M12 40 C 18 52, 82 52, 88 40" stroke="#181A1D" stroke-width="4" fill="none" opacity="0.6" />
+
+    <!-- Back adjustment dial -->
+    <rect x="47" y="52" width="6" height="5" rx="1.5" fill="#4B515D" />
+
+    <!-- Top Forehead Pad -->
+    <path d="M34 26 C 42 23, 58 23, 66 26" stroke="#505663" stroke-width="4" stroke-linecap="round" fill="none" />
+
+    <!-- Side Mount Brackets -->
+    <rect x="15" y="32" width="7" height="10" rx="2" fill="#2D313A" />
+    <rect x="78" y="32" width="7" height="10" rx="2" fill="#2D313A" />
+
+    <!-- Visor Display Shield -->
+    <path d="M21 37 C 28 32, 72 32, 79 37 L 76 56 C 70 64, 30 64, 24 56 Z" fill="url(#hlVisor)" stroke="#00A4EF" stroke-width="1.2" />
+
+    <!-- Visor Light Reflection Arc -->
+    <path d="M25 38 C 32 34, 68 34, 75 38 C 65 42, 35 44, 25 38 Z" fill="url(#hlVisorReflection)" />
+    <path d="M28 42 C 34 39, 48 39, 52 41 C 45 44, 33 44, 28 42 Z" fill="#FFFFFF" opacity="0.4" />
+
+    <!-- Front Sensor Brow / Tracking Bar -->
+    <path d="M19 33 C 30 28, 70 28, 81 33 C 81 36, 79 39, 77 39 C 68 35, 32 35, 23 39 C 21 39, 19 36, 19 33 Z" fill="url(#hlFrame)" stroke="#111315" stroke-width="0.8" />
+
+    <!-- Sensor Cameras / Depth Projectors -->
+    <circle cx="30" cy="34" r="1.3" fill="#000000" />
+    <circle cx="30" cy="34" r="0.6" fill="#00E5FF" opacity="0.8" />
+    <circle cx="50" cy="32.5" r="1.5" fill="#000000" />
+    <circle cx="50" cy="32.5" r="0.7" fill="#00E5FF" />
+    <circle cx="70" cy="34" r="1.3" fill="#000000" />
+    <circle cx="70" cy="34" r="0.6" fill="#00E5FF" opacity="0.8" />
+
+    <!-- Microsoft 4-Color Micro Emblem -->
+    <g transform="translate(46, 20) scale(0.45)">
+        <rect x="0" y="0" width="8" height="8" fill="#F25022" />
+        <rect x="9.5" y="0" width="8" height="8" fill="#7FBA00" />
+        <rect x="0" y="9.5" width="8" height="8" fill="#00A4EF" />
+        <rect x="9.5" y="9.5" width="8" height="8" fill="#FFB900" />
+    </g>
+</svg>

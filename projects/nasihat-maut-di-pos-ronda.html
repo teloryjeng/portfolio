@@ -24,10 +24,8 @@
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
     <link rel="apple-touch-icon" href="../assets/logo/sdefault.png">
-    <!-- Babylon.js CDNs for 3D GLB Rendering -->
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <script src="../script/project-3d.js" defer></script>
+    <!-- 3D Resource Preconnect Hints -->
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
     <!-- Google Model Viewer component for lightweight shared WebGL grid rendering -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <script src="../script/project-loading.js" defer></script>
@@ -186,6 +184,7 @@
                     <!-- Model 1 (Pak Jajang) -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/animasi3d/pakjajang6.glb" alt="Model Karakter Pak Jajang"
+                            poster="../assets/3d/posters/animasi3d/pakjajang6.webp"
                             class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
                             exposure="1.0" camera-orbit="45deg 90deg 105%">
                         </model-viewer>
@@ -193,6 +192,7 @@
                     <!-- Model 2 (Pos Ronda) -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/animasi3d/gazebo.glb" alt="Model Pos Ronda" class="gallery-mv"
+                            poster="../assets/3d/posters/animasi3d/gazebo.webp"
                             loading="lazy" environment-image="neutral" shadow-intensity="1" exposure="1.0"
                             camera-orbit="45deg 90deg 75%">
                         </model-viewer>
@@ -200,6 +200,7 @@
                     <!-- Model 3 (Motorcycle) -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/animasi3d/motor.glb" alt="Model Sepeda Motor" class="gallery-mv"
+                            poster="../assets/3d/posters/animasi3d/motor.webp"
                             loading="lazy" environment-image="neutral" shadow-intensity="1" exposure="1.0"
                             camera-orbit="45deg 90deg 75%">
                         </model-viewer>
@@ -207,6 +208,7 @@
                     <!-- Model 4 (Food) -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/animasi3d/pohongpiring.glb" alt="Model Hidangan Makanan"
+                            poster="../assets/3d/posters/animasi3d/pohongpiring.webp"
                             class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
                             exposure="1.0" camera-orbit="45deg 60deg 85%">
                         </model-viewer>
@@ -214,6 +216,7 @@
                     <!-- Model 5 (House) -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/animasi3d/rumah.glb" alt="Model Rumah Warga" class="gallery-mv"
+                            poster="../assets/3d/posters/animasi3d/rumah.webp"
                             loading="lazy" environment-image="neutral" shadow-intensity="1" exposure="1.0"
                             camera-orbit="45deg 90deg 75%">
                         </model-viewer>

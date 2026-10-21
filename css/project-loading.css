@@ -10,13 +10,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
     z-index: 10;
-    transition: opacity 0.5s ease;
+    padding: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-/* Hide when model-viewer finishes loading (fallback check) */
-model-viewer:not([loading]) .mv-loading-poster {
+/* Hide when model-viewer finishes loading */
+model-viewer[data-loading-state="loaded"] .mv-loading-poster {
     opacity: 0;
     pointer-events: none;
 }
@@ -39,6 +42,19 @@ model-viewer:not([loading]) .mv-loading-poster {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     filter: drop-shadow(2px 2px 0px #000000);
+}
+
+.mv-loading-subtext {
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted, #888888);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 @keyframes p5-mini-spin {

@@ -131,14 +131,47 @@ function init3DViewer(canvasId, modelUrl) {
         window.addEventListener("resize", onResize);
     }
 
-    if (typeof BABYLON.SkyMaterial === "undefined") {
-        const script = document.createElement("script");
-        script.src = "https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js";
-        script.onload = run;
-        document.head.appendChild(script);
-    } else {
-        run();
+    function ensureBabylonDependencies(callback) {
+        function loadScript(src, cb) {
+            let existing = document.querySelector(`script[src="${src}"]`);
+            if (existing) {
+                if (existing.dataset.loaded === 'true' || window.BABYLON) return cb();
+                existing.addEventListener('load', () => { existing.dataset.loaded = 'true'; cb(); });
+                return;
+            }
+            const s = document.createElement("script");
+            s.src = src;
+            s.onload = () => { s.dataset.loaded = 'true'; cb(); };
+            document.head.appendChild(s);
+        }
+
+        if (typeof BABYLON === "undefined") {
+            loadScript("https://cdn.babylonjs.com/babylon.js", () => {
+                loadScript("https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js", () => {
+                    checkMaterials(callback);
+                });
+            });
+        } else if (typeof BABYLON.SceneLoader === "undefined") {
+            loadScript("https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js", () => {
+                checkMaterials(callback);
+            });
+        } else {
+            checkMaterials(callback);
+        }
     }
+
+    function checkMaterials(callback) {
+        if (typeof BABYLON.SkyMaterial === "undefined") {
+            const script = document.createElement("script");
+            script.src = "https://cdn.babylonjs.com/materialsLibrary/babylonjs.materials.min.js";
+            script.onload = callback;
+            document.head.appendChild(script);
+        } else {
+            callback();
+        }
+    }
+
+    ensureBabylonDependencies(run);
 }
 
 function onResize() {

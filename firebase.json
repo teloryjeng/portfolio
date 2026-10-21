@@ -1,0 +1,15 @@
+{
+  "hosting": {
+    "site": "msururiardan",
+    "public": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "requirements.txt"
+    ]
+  }
+}
+

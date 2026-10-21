@@ -1,5 +1,9 @@
 // Footer Component
 (function () {
+    const currentPath = window.location.pathname;
+    const isSubfolder = currentPath.includes("/projects/") || currentPath.includes("/photography/");
+    const cvPageHref = `${isSubfolder ? "../" : "./"}cv.html`;
+
     document.write(`
         <footer class="main-footer">
             <div class="footer-container">
@@ -33,7 +37,7 @@
                         </svg>
                     </a>
                     <!-- CV -->
-                    <a href="https://drive.google.com/file/d/18nSYuDBT_XyCu6ICL9xajm6nv6Y0Upha/view?usp=drive_link" class="social-icon cv-icon" aria-label="Download CV" title="Curriculum Vitae" target="_blank" rel="noopener noreferrer">
+                    <a href="${cvPageHref}" class="social-icon cv-icon" aria-label="Preview CV" title="Curriculum Vitae">
                         <span class="cv-text">CV</span>
                     </a>
                 </div>

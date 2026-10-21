@@ -135,9 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (proceedBtn) {
             proceedBtn.addEventListener('click', () => {
                 warningOverlay.classList.remove('active');
-                // Restore src to download assets
+                // Restore assets progressively via queue to prevent network freeze & WebGL crash
+                if (typeof window.start3DGalleryQueue === 'function') {
+                    window.start3DGalleryQueue();
+                }
                 mvs.forEach(mv => {
-                    if (mv.dataset.src) {
+                    // Only restore immediately for standalone non-gallery hero 3D models
+                    if (!mv.closest('.gallery-item') && mv.dataset.src && !mv.getAttribute('src')) {
                         mv.setAttribute('src', mv.dataset.src);
                     }
                 });
@@ -179,6 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 <span class="mv-loading-text">LOADING 3D SCENE</span>
             </div>
             <img class="lightbox-content" src="" alt="">
+            <model-viewer id="lightbox-3d-mv" class="lightbox-content lightbox-3d-content"
+                auto-rotate camera-controls shadow-intensity="1.2"
+                skybox-image="${prefix}assets/3d/citrus_orchard_road_puresky_1k.hdr"
+                environment-image="${prefix}assets/3d/citrus_orchard_road_puresky_1k.hdr"
+                exposure="1.0"
+                style="display: none;">
+            </model-viewer>
             <div class="lightbox-image-overlay"></div>
         </div>
         <div class="lightbox-caption"></div>
@@ -286,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 playSfx("deck_ui_show_modal.dat", true);
             }
         } catch (err) {
-            alert("p5SelectThumbnail Error: " + err.message);
+            console.error("p5SelectThumbnail Error:", err);
         }
     };
 
@@ -302,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         playSfx("deck_ui_show_modal.dat", true);
                     }
                 } catch (err) {
-                    alert("thumbContainer Click Error: " + err.message);
+                    console.error("thumbContainer Click Error:", err);
                 }
             }
         });
@@ -328,47 +339,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 3D Model Preview
                 if (lightboxImg) lightboxImg.style.display = 'none';
 
-                // Show loading indicator
-                const loadingIndicator = lightbox.querySelector('#lightbox-3d-loading');
-                if (loadingIndicator) {
-                    loadingIndicator.style.opacity = '1';
-                    loadingIndicator.style.display = 'flex';
-                }
-
-                let canvas = lightbox.querySelector('#lightbox-3d-canvas');
-                if (!canvas) {
-                    canvas = document.createElement('canvas');
-                    canvas.id = 'lightbox-3d-canvas';
-                    canvas.className = 'lightbox-content';
-                    canvas.style.width = 'clamp(280px, 75vw, 850px)';
-                    canvas.style.height = 'clamp(350px, 60vh, 550px)';
+                let lightboxMv = lightbox.querySelector('#lightbox-3d-mv');
+                if (!lightboxMv) {
+                    lightboxMv = document.createElement('model-viewer');
+                    lightboxMv.id = 'lightbox-3d-mv';
+                    lightboxMv.className = 'lightbox-content lightbox-3d-content';
+                    lightboxMv.setAttribute('auto-rotate', '');
+                    lightboxMv.setAttribute('camera-controls', '');
+                    lightboxMv.setAttribute('shadow-intensity', '1.2');
+                    lightboxMv.setAttribute('skybox-image', `${prefix}assets/3d/citrus_orchard_road_puresky_1k.hdr`);
+                    lightboxMv.setAttribute('environment-image', `${prefix}assets/3d/citrus_orchard_road_puresky_1k.hdr`);
+                    lightboxMv.setAttribute('exposure', '1.0');
                     const wrapperDiv = lightbox.querySelector('.lightbox-wrapper');
                     if (wrapperDiv) {
-                        wrapperDiv.appendChild(canvas);
+                        wrapperDiv.appendChild(lightboxMv);
                     }
                 }
-                canvas.style.display = 'block';
+                lightboxMv.style.display = 'block';
 
                 const mvElement = mediaItem.querySelector('model-viewer');
                 const modelUrl = mvElement ? (mvElement.getAttribute('src') || mvElement.dataset.src) : '';
-                const altText = mvElement ? mvElement.getAttribute('alt') : 'INTERACTIVE 3D MODEL';
+                const posterUrl = mvElement ? (mvElement.getAttribute('poster') || mvElement.dataset.poster) : '';
+                const altText = mvElement ? (mvElement.getAttribute('alt') || 'INTERACTIVE 3D MODEL') : 'INTERACTIVE 3D MODEL';
+
+                if (posterUrl) {
+                    lightboxMv.setAttribute('poster', posterUrl);
+                } else {
+                    lightboxMv.removeAttribute('poster');
+                }
+                if (modelUrl) {
+                    lightboxMv.setAttribute('src', modelUrl);
+                }
+                lightboxMv.setAttribute('alt', altText);
 
                 if (lightboxCaption) {
-                    lightboxCaption.innerText = altText.toUpperCase();
+                    const counter = currentMediaList.length > 1 ? ` (${index + 1} / ${currentMediaList.length})` : '';
+                    lightboxCaption.innerText = altText.toUpperCase() + counter;
                 }
 
-                // Hide arrows and thumbnails if it is a 3D model
-                if (arrowLeft) arrowLeft.style.display = 'none';
-                if (arrowRight) arrowRight.style.display = 'none';
-                if (thumbContainer) thumbContainer.style.display = 'none';
+                // Show arrows and thumbnails if there are multiple items
+                if (currentMediaList.length > 1) {
+                    if (arrowLeft) arrowLeft.style.display = 'flex';
+                    if (arrowRight) arrowRight.style.display = 'flex';
+                    if (thumbContainer) thumbContainer.style.display = 'block';
+                } else {
+                    if (arrowLeft) arrowLeft.style.display = 'none';
+                    if (arrowRight) arrowRight.style.display = 'none';
+                    if (thumbContainer) thumbContainer.style.display = 'none';
+                }
 
-                setTimeout(() => {
-                    if (typeof init3DViewer === 'function' && modelUrl) {
-                        init3DViewer('lightbox-3d-canvas', modelUrl);
-                    }
-                }, 100);
+                // Rebuild the sliding window of thumbnails
+                buildThumbnails();
             } else {
                 // Static Image Preview
+                const lightboxMv = lightbox.querySelector('#lightbox-3d-mv');
+                if (lightboxMv) {
+                    lightboxMv.removeAttribute('src');
+                    lightboxMv.style.display = 'none';
+                }
                 const canvas = lightbox.querySelector('#lightbox-3d-canvas');
                 if (canvas) canvas.style.display = 'none';
                 if (lightboxImg) lightboxImg.style.display = 'block';
@@ -497,7 +525,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             return true;
         } catch (err) {
-            alert("updateLightboxContent error: " + err.message);
+            console.error("updateLightboxContent error:", err);
             return false;
         }
     }
@@ -520,8 +548,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (is3D) {
                 const mvElement = mediaItem.querySelector('model-viewer');
-                src = mvElement ? (mvElement.getAttribute('poster') || '../assets/logo/sdefault.png') : '../assets/logo/sdefault.png';
-                alt = '3D Model';
+                src = mvElement ? (mvElement.getAttribute('poster') || mvElement.dataset.poster || '../assets/logo/sdefault.png') : '../assets/logo/sdefault.png';
+                alt = mvElement ? (mvElement.getAttribute('alt') || `3D Model ${i + 1}`) : `3D Model ${i + 1}`;
             } else if (img) {
                 src = img.src;
                 alt = img.alt || `Photo ${i + 1}`;
@@ -578,6 +606,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         wrapper.addEventListener('click', () => {
             const isPhotographyPage = window.location.pathname.includes("/photography/");
+            const is3DGallery = wrapper.classList.contains('gallery-item');
 
             if (isPhotographyPage) {
                 // Find all photography gallery items on the page
@@ -589,8 +618,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Show lightbox and update the main content immediately for a lag-free pop
                 updateLightboxContent(clickedIndex);
+            } else if (is3DGallery) {
+                // Collect all 3D gallery items on the page for multi-item thumbnail navigation!
+                const activeItems = Array.from(document.querySelectorAll('.gallery-item'))
+                    .filter(item => !item.classList.contains('no-border') && !item.querySelector('iframe') && item.querySelector('model-viewer'));
+
+                currentMediaList = activeItems.length > 0 ? activeItems : [wrapper];
+                const clickedIndex = currentMediaList.indexOf(wrapper);
+
+                updateLightboxContent(clickedIndex >= 0 ? clickedIndex : 0);
             } else {
-                // For project details, treat it as a single-item preview (no navigation or thumbnails)
+                // For standalone story images/videos, treat it as a single-item preview
                 currentMediaList = [wrapper];
                 
                 if (arrowLeft) arrowLeft.style.display = 'none';
@@ -623,6 +661,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset close button animation style to allow entrance animation on next open
         if (lightboxClose) {
             lightboxClose.classList.remove('entrance-done');
+        }
+
+        // Clean up 3D model-viewer
+        const lightboxMv = lightbox.querySelector('#lightbox-3d-mv');
+        if (lightboxMv) {
+            lightboxMv.removeAttribute('src');
+            lightboxMv.style.display = 'none';
         }
 
         // Dispose 3D viewer to free memory
@@ -678,7 +723,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         playSfx("deck_ui_show_modal.dat", true);
                     }
                 } catch (err) {
-                    alert("Document Capture Click Error: " + err.message);
+                    console.error("Document Capture Click Error:", err);
                 }
             }
         }

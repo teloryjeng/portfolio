@@ -25,10 +25,8 @@
     <link rel="stylesheet" href="../fonts/font.css">
     <link rel="icon" type="image/png" href="../assets/logo/sdefault.png">
     <link rel="apple-touch-icon" href="../assets/logo/sdefault.png">
-    <!-- Babylon.js CDNs for 3D GLB Rendering -->
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <script src="../script/project-3d.js" defer></script>
+    <!-- 3D Resource Preconnect Hints -->
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
     <script src="../script/project-loading.js" defer></script>
     <!-- Google Model Viewer component for lightweight shared WebGL grid rendering -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
@@ -270,6 +268,7 @@
                     <!-- Model 1 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/masjidmoeldoko.glb"
+                            poster="../assets/3d/posters/atbraya/masjidmoeldoko.webp"
                             alt="3D Model Masjid Moeldoko Jombang" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="45deg 90deg 75%">
@@ -278,6 +277,7 @@
                     <!-- Model 2 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gapurasumo.glb"
+                            poster="../assets/3d/posters/atbraya/gapurasumo.webp"
                             alt="3D Model Gapura Tol Surabaya-Mojokerto" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-30deg 90deg 75%">
@@ -286,6 +286,7 @@
                     <!-- Model 2 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/tgalek1.glb" alt="3D Model Gapura Kabupaten Trenggalek"
+                            poster="../assets/3d/posters/atbraya/tgalek1.webp"
                             class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
                             exposure="1.8" camera-orbit="-25deg 90deg 75%">
                         </model-viewer>
@@ -293,6 +294,7 @@
                     <!-- Model 13 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gapuratagung1.glb"
+                            poster="../assets/3d/posters/atbraya/gapuratagung1.webp"
                             alt="3D Model Gapura Selamat Datang Tulungagung" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-45deg 90deg 75%">
@@ -301,6 +303,7 @@
                     <!-- Model 13 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gapuratagung.glb"
+                            poster="../assets/3d/posters/atbraya/gapuratagung.webp"
                             alt="3D Model Gapura Selamat Datang Tulungagung 1" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-45deg 90deg 75%">
@@ -309,6 +312,7 @@
                     <!-- Model 9 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gayatri1.glb"
+                            poster="../assets/3d/posters/atbraya/gayatri1.webp"
                             alt="3D Model Gapura Terminal Gayatri Tulungagung" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-45deg 90deg 75%">
@@ -317,6 +321,7 @@
                     <!-- Model 3 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/tentrem.glb" alt="3D Model Kantor Karoseri Bus Tentrem"
+                            poster="../assets/3d/posters/atbraya/tentrem.webp"
                             class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
                             exposure="1.8" camera-orbit="-45deg 90deg 75%">
                         </model-viewer>
@@ -324,6 +329,7 @@
                     <!-- Model 7 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/27trans.glb"
+                            poster="../assets/3d/posters/atbraya/27trans.webp"
                             alt="3D Model Kantor Pusat 27 Trans Lawang Malang" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -332,6 +338,7 @@
                     <!-- Model 5 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/harjaytosaren1.glb"
+                            poster="../assets/3d/posters/atbraya/harjaytosaren1.webp"
                             alt="3D Model Agen Bus Harapan Jaya Kota Kediri" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -340,6 +347,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/ROSINJOMBNA1.glb"
+                            poster="../assets/3d/posters/atbraya/ROSINJOMBNA1.webp"
                             alt="3D Agen Bus Rosalia Indah Jombang" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-45deg 90deg 75%">
@@ -348,6 +356,7 @@
                     <!-- Model 10 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/rosintagung2.glb"
+                            poster="../assets/3d/posters/atbraya/rosintagung2.webp"
                             alt="Model 3D Agen Bus Rosalia Indah Tulungagung" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-45deg 90deg 75%">
@@ -356,6 +365,7 @@
                     <!-- Model 10 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/haltebungurasih.glb"
+                            poster="../assets/3d/posters/atbraya/haltebungurasih.webp"
                             alt="Model 3D Halte Bus Bungurasih" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-45deg 90deg 75%">
@@ -364,6 +374,7 @@
                     <!-- Model 3 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/cocacolaespuma.glb"
+                            poster="../assets/3d/posters/atbraya/cocacolaespuma.webp"
                             alt="3D Model Gapura Rest Area KM754 Sidoarjo" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -372,6 +383,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/cocacolaespuma1.glb"
+                            poster="../assets/3d/posters/atbraya/cocacolaespuma1.webp"
                             alt="3D Model Landmark KM754 Sidoarjo" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -380,6 +392,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gapurapurwodadi.glb"
+                            poster="../assets/3d/posters/atbraya/gapurapurwodadi.webp"
                             alt="3D Model Gapura Kebun Raya Purwodadi" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -387,6 +400,7 @@
                     </div>
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/tugugapurakotamalang.glb"
+                            poster="../assets/3d/posters/atbraya/tugugapurakotamalang.webp"
                             alt="3D Model Tugu Gapura Kota Malang" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -394,6 +408,7 @@
                     </div>
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gapurakotamalang.glb"
+                            poster="../assets/3d/posters/atbraya/gapurakotamalang.webp"
                             alt="3D Model Gapura Kota Malang" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -402,6 +417,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gapuraabdulsaleh.glb"
+                            poster="../assets/3d/posters/atbraya/gapuraabdulsaleh.webp"
                             alt="3D Model Gapura Abdul Saleh Malang" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -410,6 +426,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/gerbangtolpandaan.glb"
+                            poster="../assets/3d/posters/atbraya/gerbangtolpandaan.webp"
                             alt="3D Model Gerbang Tol Pandaan" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
@@ -418,6 +435,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/GAPURAARJOSARI.glb" alt="3D Model Gapura Terminal Arjosari"
+                            poster="../assets/3d/posters/atbraya/GAPURAARJOSARI.webp"
                             class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
                             exposure="1.8" camera-orbit="-35deg 90deg 75%">
                         </model-viewer>
@@ -425,6 +443,7 @@
                     <!-- Model 4 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/astra.glb"
+                            poster="../assets/3d/posters/atbraya/astra.webp"
                             alt="3D Model Tulisan Tol Astra Mojokerto" class="gallery-mv" loading="lazy"
                             environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="150deg 90deg 75%">
@@ -433,26 +452,24 @@
                     <!-- Model 6 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/palangkereta1.glb" alt="3D Model Palang Kereta"
+                            poster="../assets/3d/posters/atbraya/palangkereta1.webp"
                             class="gallery-mv" loading="lazy" environment-image="neutral" shadow-intensity="1"
                             exposure="1.8" camera-orbit="-25deg 90deg 75%">
                         </model-viewer>
                     </div>
 
-                    <!-- Model 8 -->
-
-
-
                     <!-- Model 11 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/sheltergayatri.glb"
+                            poster="../assets/3d/posters/atbraya/sheltergayatri.webp"
                             alt="3D Model Shelter Terminal Gayatri Tulungagung" class="gallery-mv" loading="lazy"
-                            environment-image="neutral" shadow-intensity="1" exposure="1.8" camera-orbit="-45deg 90deg
-                            65%">
+                            environment-image="neutral" shadow-intensity="1" exposure="1.8" camera-orbit="-45deg 90deg 65%">
                         </model-viewer>
                     </div>
                     <!-- Model 12 -->
                     <div class="gallery-item">
                         <model-viewer src="../assets/3d/atbraya/kantorspbu1.glb" alt="3D Kantor SPBU" class="gallery-mv"
+                            poster="../assets/3d/posters/atbraya/kantorspbu1.webp"
                             loading="lazy" environment-image="neutral" shadow-intensity="1" exposure="1.8"
                             camera-orbit="-35deg 90deg 75%">
                         </model-viewer>

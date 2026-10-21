@@ -34,6 +34,7 @@
 .hero-first-name,
 .hero-last-name {
     font-family: 'Persona 5 Menu', sans-serif;
+    font-weight: 20;
 }
 
 .about-hero-sub {
@@ -244,8 +245,9 @@
 }
 
 .skills-heading {
-    font-family: 'Persona 5 Menu', sans-serif;
+    font-family: 'Magazine Letter', sans-serif;
     font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
     color: var(--text-white);
     text-align: center;
     margin-bottom: 4rem;
